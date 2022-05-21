@@ -1,7 +1,7 @@
 import {Navbar, Container, Nav, NavDropdown, InputGroup, FormControl, Button} from 'react-bootstrap';
-import './Menu.css';
+import './NavBar.css';
 
-const Menu = () => {
+const NavBar = () => {
     return  <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
                     <Navbar.Brand className="ms-3 fw-bold text-warning" href="#home">ML Tecnología</Navbar.Brand>
@@ -43,4 +43,4 @@ const Menu = () => {
             </Navbar>
 }
 
-export default Menu
+export default NavBar
