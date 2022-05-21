@@ -5,13 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <header className="App-header">
-        <h1>Tu lugar favorito para comprar tecnología.</h1>
-      </header>
-      <footer>
-        
-      </footer>
+        <NavBar/>
+        <main className='App-main'>
+          <h1>Tu lugar favorito para comprar tecnología.</h1>
+        </main>
+        <footer>
+          
+        </footer>
     </div>
   );
 }
