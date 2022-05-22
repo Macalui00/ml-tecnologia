@@ -1,5 +1,6 @@
 import {Navbar, Container, Nav, NavDropdown, InputGroup, FormControl, Button} from 'react-bootstrap';
 import './NavBar.css';
+import CardWidget from './../CardWidget/CardWidget.js';
 
 const NavBar = () => {
     return <header>
@@ -32,7 +33,8 @@ const NavBar = () => {
                                 </NavDropdown>
                             </Nav>
                             <Nav className="me-5 justify-content-end">
-                                <NavDropdown title="CoderHouse" id="basic-nav-dropdown" className='fw-bold'>
+                                <CardWidget/>
+                                <NavDropdown title="CoderHouse" id="basic-nav-dropdown" className='fw-bold ms-2'>
                                     <NavDropdown.Item className='fw-bold' href="#action/3.1">Mi Perfil</NavDropdown.Item>
                                     <NavDropdown.Item className='fw-bold' href="#action/3.2">Configuración</NavDropdown.Item>
                                     <NavDropdown.Divider />
