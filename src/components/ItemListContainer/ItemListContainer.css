@@ -5,3 +5,7 @@ li{
 .detalle{
     font-size: 20px;
 }
+
+.card-header{
+    background-color: #282c34;
+}
