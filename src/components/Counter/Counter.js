@@ -5,19 +5,18 @@ import { BsPlus, BsDash } from "react-icons/bs";
 
 const Counter = ({stock = 4}) => {
 
-    let [stock2, setStockC2] = useState(stock);
     let [contador, setContador] = useState(1);
 
     const incrementar = () => {
         if (stock > contador) {
-            setStockC2(stock2 - 1);
+            stock = stock - 1;
             setContador(contador + 1);
         }
     }
 
     const decrementar = () => {
         if (contador > 1) {
-            setStockC2(stock2 + 1);
+            stock = stock + 1;
             setContador(contador - 1);
         }
     }
