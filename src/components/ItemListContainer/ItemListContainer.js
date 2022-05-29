@@ -22,7 +22,9 @@ const ItemListContainer = ({producto}) => {
                         <li><p className='detalle'>Marca: {marca}</p></li>
                         <li><p className='detalle'>Memoria: {memoria}</p></li>
                     </ul>
-                    <Button variant="primary" onClick={mostrarCounter}>Comprar</Button>
+                    {
+                        mostrar ? <Button variant="danger" onClick={mostrarCounter}>Cancelar</Button> : <Button variant="primary" onClick={mostrarCounter}>Comprar</Button>
+                    }
                     {
                         mostrar ? <ItemCount stock={4} inicial={1}/> : <div></div>
                     }
