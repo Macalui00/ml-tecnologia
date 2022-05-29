@@ -9,14 +9,12 @@ const Counter = ({stock = 4}) => {
 
     const incrementar = () => {
         if (stock > contador) {
-            stock = stock - 1;
             setContador(contador + 1);
         }
     }
 
     const decrementar = () => {
         if (contador > 1) {
-            stock = stock + 1;
             setContador(contador - 1);
         }
     }
