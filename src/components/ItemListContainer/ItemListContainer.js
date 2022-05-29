@@ -1,6 +1,6 @@
 import './ItemListContainer.css';
 import { Card, Button } from 'react-bootstrap';
-import Counter from '../Counter/Counter';
+import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 
 const ItemListContainer = ({producto}) => {
@@ -24,7 +24,7 @@ const ItemListContainer = ({producto}) => {
                     </ul>
                     <Button variant="primary" onClick={mostrarCounter}>Comprar</Button>
                     {
-                        mostrar ? <Counter stock={1}/> : <div></div>
+                        mostrar ? <ItemCount stock={4} inicial={1}/> : <div></div>
                     }
                 </Card.Body>
             </Card>
