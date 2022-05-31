@@ -5,19 +5,12 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer.
 
 function App() {
 
-  const producto = {
-    nombre: "Motorola One Vision",
-    tipo: "Celular",
-    marca: "Motorola",
-    memoria: "128GB"
-  }
-
   return (
     <div className="App">
         <NavBar/>
         <main className='App-main'>
           <h1 className='mt-5 text-warning'>Tu lugar favorito para comprar tecnología</h1>
-          <ItemListContainer producto={producto}/>
+          <ItemListContainer/>
         </main>
         <footer>
           
