@@ -1,6 +1,6 @@
 import './ItemCount.css';
-import { useState, useEffect } from "react";
-import { InputGroup, Button, FormControl } from "react-bootstrap";
+import { useState} from "react";
+import { InputGroup, Button} from "react-bootstrap";
 import { BsPlus, BsDash } from "react-icons/bs";
 
 const ItemCount = ({stock = 4, inicial = 1}) => {

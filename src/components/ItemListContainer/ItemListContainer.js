@@ -3,18 +3,27 @@ import { Spinner } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import pedirDatos from '../../mock/pedirDatos'; 
 import ItemList from '../ItemList.js/ItemList';
+import { useParams } from "react-router-dom"
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([])
 
     const [loading, setLoading] = useState(true);
 
+    const {categoryId} = useParams()
+
     useEffect(() => {
         setLoading(true);
 
         pedirDatos()
             .then((resp) => {
-                setItems(resp);
+
+                if (!categoryId){
+                    setItems(resp);
+                } else {
+                    setItems(resp.filter((item) => item.categoria === categoryId.toUpperCase()))
+                }
+                
             })
             .catch((error) => {
                 console.log("ERROR: ", error);

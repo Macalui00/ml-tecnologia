@@ -1,5 +1,9 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react"
+import { Spinner } from "react-bootstrap"
+import { useParams } from "react-router-dom"
+import ItemDetail from "../ItemDetail/ItemDetail"
+import pedirDatos from "../../mock/pedirDatos"
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState(null)
