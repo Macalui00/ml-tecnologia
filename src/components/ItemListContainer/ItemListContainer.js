@@ -12,7 +12,7 @@ const ItemListContainer = () => {
     useEffect(() => {
         setLoading(true);
 
-        pedirDatos(false)
+        pedirDatos()
             .then((resp) => {
                 setItems(resp);
             })
