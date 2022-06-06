@@ -32,7 +32,7 @@ const ItemListContainer = () => {
                 setLoading(false);
             })
 
-    }, [])
+    }, [categoryId])
 
     return (
         <section className='productos mt-5'>

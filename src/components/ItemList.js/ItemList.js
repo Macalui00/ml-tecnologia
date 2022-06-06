@@ -7,12 +7,9 @@ const ItemList = ({items}) => {
             <h2 className='fw-bold'>Nuestros productos</h2>
             <hr/>
             <div className='row'>
-                
+                               
                 {
-                    items.map((item) => (
-                        <Item item={item}/> 
-                        )
-                    )
+                    items.map((item) => <Item key={item.id} item={item}/>)
                 }
                 
             </div>

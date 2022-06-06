@@ -18,6 +18,7 @@ function App() {
             <Routes>
               <Route path='/' element={<ItemListContainer/>}/>
               <Route path='/categorias/:categoryId' element={<ItemListContainer/>}/>
+              <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
               <Route path='/ItemDetailContainer' element={<ItemDetailContainer/>}/>
               <Route path='/nosotros' element={<Nosotros/>}/>
             </Routes>
