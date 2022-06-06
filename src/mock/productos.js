@@ -2,10 +2,10 @@ const productos = [
     {
         id: 1,
         nombre: "Motorola One Vision",
-        desc: "Celular con 1028 GB de memoria interna.",
+        desc: "Celular con 1028 GB de memoria interna, 4GB de memoria RAM y bateria de 3.500 mAh.",
         precio: 70000,
         categoria: "celulares",
-        img: "https://placeholder.com/220"
+        img: "../img/MotorolaOneVision.jpg"
     },
     {
         id: 2,
@@ -18,10 +18,10 @@ const productos = [
     {
         id: 3,
         nombre: "Motorola One Action",
-        desc: "Celular con 1028 GB de memoria interna.",
+        desc: "Celular con 1028 GB de memoria interna, 4GB de memoria RAM y bateria de 3.500 mAh.",
         precio: 70000,
         categoria: "celulares",
-        img: "https://placeholder.com/220"
+        img: "../img/MotorolaOneAction.jpg"
     },
     {
         id: 4,
