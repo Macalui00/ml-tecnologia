@@ -5,6 +5,7 @@ import Nosotros from './components/Nosotros/Nosotros';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { Navigate } from 'react-router-dom';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
               <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
               <Route path='/ItemDetailContainer' element={<ItemDetailContainer/>}/>
               <Route path='/nosotros' element={<Nosotros/>}/>
+              <Route path='*' element={<Navigate to={"/"}/>}/>
             </Routes>
           </main>
           <footer>

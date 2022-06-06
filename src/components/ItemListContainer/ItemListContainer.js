@@ -21,7 +21,7 @@ const ItemListContainer = () => {
                 if (!categoryId){
                     setItems(resp);
                 } else {
-                    setItems(resp.filter((item) => item.categoria === categoryId.toUpperCase()))
+                    setItems(resp.filter((item) => item.categoria.toUpperCase() === categoryId.toUpperCase()))
                 }
                 
             })
