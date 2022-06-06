@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const Item = ({item}) => {
 
     return(
-        <Card style={{ width: '18rem' }} className='me-3 ms-3 mb-3 p-0' key={item.id}>
+        <Card style={{ width: '18rem' }} className='ms-3 me-3 mb-3 p-0' key={item.id}>
+            {/* <Card.Img variant="top" src={item.img} alt={item.nombre}/> */}
             <Card.Header className='card-header'><Card.Title className='fw-bold text-warning mb-0'>{item.nombre}</Card.Title></Card.Header>
             <Card.Body>
                 <ul className='m-0 p-0 text-dark'>

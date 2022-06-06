@@ -10,7 +10,7 @@ const ItemCount = ({stock = 4, inicial = 1}) => {
     const incrementar = () => {
         if (stock > contador) {
             setContador(contador + 1);
-        } else {alert("Lo sentimos, no hay más stock")}
+        } else {alert("Lo sentimos, no hay más stock que el seleccionado actualmente.")}
     }
 
     const decrementar = () => {
