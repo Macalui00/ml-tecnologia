@@ -21,7 +21,7 @@ const ItemDetail = ({item}) => {
     return (
         <Container fluid>
             <Card style={{ width: '30rem' }} className='me-3 ms-3 mb-3 p-0'>
-                <Card.Img variant="top" src={item.img} alt={item.nombre}/>
+                {/* <Card.Img variant="top" src={item.img} alt={item.nombre}/> */}
                 <Card.Header className='card-header'><Card.Title className='fw-bold text-warning mb-0 fs-3'>{item.nombre}</Card.Title></Card.Header>
                 <Card.Body>
                     <p className="text-dark fs-5">{item.desc}</p>
