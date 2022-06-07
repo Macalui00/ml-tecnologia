@@ -5,7 +5,7 @@ const productos = [
         desc: "Celular con 1028 GB de memoria interna, 4GB de memoria RAM y bateria de 3.500 mAh.",
         precio: 70000,
         categoria: "celulares",
-        img: "../img/MotorolaOneVision.jpg",
+        img: "./img/MotorolaOneVision.jpg",
         stock: 10
     },
     {
@@ -14,7 +14,7 @@ const productos = [
         desc: "Smart TV de Samsung de 32 pulgadas, incluye Youtube y Netflix.",
         precio: 47999,
         categoria: "TV",
-        img: "https://placeholder.com/220",
+        img: "./img/perro.jpg",
         stock: 13
     },
     {
@@ -23,7 +23,7 @@ const productos = [
         desc: "Celular con 1028 GB de memoria interna, 4GB de memoria RAM y bateria de 3.500 mAh.",
         precio: 70000,
         categoria: "celulares",
-        img: "../img/MotorolaOneAction.jpg",
+        img: "./img/MotorolaOneAction.jpg",
         stock: 4
     },
     {
@@ -32,7 +32,7 @@ const productos = [
         desc: "Smart TV de Samsung de 43 pulgadas, 4K. Incluye Youtube y Netflix.",
         precio: 79999,
         categoria: "TV",
-        img: "https://placeholder.com/220",
+        img: "./img/MotorolaOneAction.jpg",
         stock: 3
     },
     {
@@ -41,7 +41,7 @@ const productos = [
         desc: "Soporte de escritorio para notebook universal IPHO98, marca Tagwood.",
         precio: 7930,
         categoria: "soporte",
-        img: "https://placeholder.com/220",
+        img: "./img/MotorolaOneAction.jpg",
         stock: 9
     },
     {
@@ -50,7 +50,7 @@ const productos = [
         desc: "Celular Samsung con 1028 GB de memoria interna, 6GB de memoria RAM y bateria de 4.500 mAh.",
         precio: 73999,
         categoria: "celulares",
-        img: "https://placeholder.com/220",
+        img: "./img/MotorolaOneAction.jpg",
         stock: 20
     },
     {
@@ -59,7 +59,7 @@ const productos = [
         desc: "Tablet Lenovo de 10 Pulgadas con 64GB de memoria intern, 4GB de RAM, sistema operativo Android 10.",
         precio: 73999,
         categoria: "tablets",
-        img: "https://placeholder.com/220",
+        img: "./img/MotorolaOneAction.jpg",
         stock: 30
     }
 ]
