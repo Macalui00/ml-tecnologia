@@ -1,29 +1,37 @@
+import MotoG200 from '../assets/MotoG200.png';
+import MotoG71 from '../assets/MotoG71.png';
+import MotoG60s from '../assets/MotoG60s.png';
+import SmartTVSamsung from '../assets/SmartTvSamsung32.webp';
+import SmartTVSamsung43 from '../assets/SmartTvSamsung43.webp';
+import Soporte from '../assets/Soporte.jpg';
+import TabletLenovoM10 from '../assets/TabletLenovoM10.jpg';
+
 const productos = [
     {
         id: 1,
-        nombre: "Motorola One Vision",
-        desc: "Celular con 1028 GB de memoria interna, 4GB de memoria RAM y bateria de 3.500 mAh.",
-        precio: 70000,
+        nombre: "Moto G200",
+        desc: "Celular con 128 GB de memoria interna, 8GB de memoria RAM y bateria de 5000 mAh.",
+        precio: 99999.00,
         categoria: "celulares",
-        img: "./img/MotorolaOneVision.jpg",
+        img: MotoG200,
         stock: 10
     },
     {
         id: 2,
         nombre: 'Smart TV 32" HD Samsung',
         desc: "Smart TV de Samsung de 32 pulgadas, incluye Youtube y Netflix.",
-        precio: 47999,
+        precio: 47999.00,
         categoria: "TV",
-        img: "./img/perro.jpg",
+        img: SmartTVSamsung,
         stock: 13
     },
     {
         id: 3,
-        nombre: "Motorola One Action",
-        desc: "Celular con 1028 GB de memoria interna, 4GB de memoria RAM y bateria de 3.500 mAh.",
-        precio: 70000,
+        nombre: "Moto G71 5g",
+        desc: "Celular con 128 GB de memoria interna, 6GB de memoria RAM y bateria de 5000 mAh.",
+        precio: 59999.00,
         categoria: "celulares",
-        img: "./img/MotorolaOneAction.jpg",
+        img: MotoG71,
         stock: 4
     },
     {
@@ -32,7 +40,7 @@ const productos = [
         desc: "Smart TV de Samsung de 43 pulgadas, 4K. Incluye Youtube y Netflix.",
         precio: 79999,
         categoria: "TV",
-        img: "./img/MotorolaOneAction.jpg",
+        img: SmartTVSamsung43,
         stock: 3
     },
     {
@@ -41,16 +49,16 @@ const productos = [
         desc: "Soporte de escritorio para notebook universal IPHO98, marca Tagwood.",
         precio: 7930,
         categoria: "soporte",
-        img: "./img/MotorolaOneAction.jpg",
+        img: Soporte,
         stock: 9
     },
     {
         id: 6,
-        nombre: 'Celular Samsung Galaxy A52 Negro',
-        desc: "Celular Samsung con 1028 GB de memoria interna, 6GB de memoria RAM y bateria de 4.500 mAh.",
+        nombre: 'Moto G60s',
+        desc: "Celular Samsung con 128 GB de memoria interna, 6GB de memoria RAM y bateria de 5000 mAh.",
         precio: 73999,
         categoria: "celulares",
-        img: "./img/MotorolaOneAction.jpg",
+        img: MotoG60s,
         stock: 20
     },
     {
@@ -59,7 +67,7 @@ const productos = [
         desc: "Tablet Lenovo de 10 Pulgadas con 64GB de memoria intern, 4GB de RAM, sistema operativo Android 10.",
         precio: 73999,
         categoria: "tablets",
-        img: "./img/MotorolaOneAction.jpg",
+        img: TabletLenovoM10,
         stock: 30
     }
 ]
