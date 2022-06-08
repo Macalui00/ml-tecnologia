@@ -21,7 +21,7 @@ const ItemCount = ({stock = 4, inicial = 1}) => {
 
     return (
         <div className="mt-3">
-            <h3 className="text-dark mb-3">Agregar elemento al carrito</h3>
+            <h3 className="text-white mt-5 mb-3">Agregar elemento al carrito</h3>
             <InputGroup className="mb-3 d-flex justify-content-center">
                 <Button variant="primary" id="button-decrementar" className="pt-0" onClick={decrementar}>
                     <BsDash color='white'/>
