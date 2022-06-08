@@ -1,10 +1,11 @@
 import MotoG200 from '../assets/MotoG200.png';
 import MotoG71 from '../assets/MotoG71.png';
 import MotoG60s from '../assets/MotoG60s.png';
-import SmartTVSamsung from '../assets/SmartTvSamsung32.webp';
-import SmartTVSamsung43 from '../assets/SmartTvSamsung43.webp';
-import Soporte from '../assets/Soporte.jpg';
-import TabletLenovoM10 from '../assets/TabletLenovoM10.jpg';
+import SmartTVSamsung from '../assets/SmartTvSamsung32.png';
+import SmartTVSamsung43 from '../assets/SmartTvSamsung43.png';
+import Soporte from '../assets/Soporte.png';
+import TabletLenovoM10 from '../assets/TabletLenovoM10.png';
+import MousePadG240 from '../assets/MousePadG240.png';
 
 const productos = [
     {
@@ -68,6 +69,15 @@ const productos = [
         precio: 73999,
         categoria: "tablets",
         img: TabletLenovoM10,
+        stock: 30
+    },
+    {
+        id: 8,
+        nombre: 'G240 Cloth Gaming Mouse Pad',
+        desc: "Mouse Pad Logitech G420.",
+        precio: 73999,
+        categoria: "pads",
+        img: MousePadG240,
         stock: 30
     }
 ]
