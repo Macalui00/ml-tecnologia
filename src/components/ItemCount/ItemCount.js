@@ -1,22 +1,17 @@
 import './ItemCount.css';
-import { useState} from "react";
 import { InputGroup, Button} from "react-bootstrap";
 import { BsPlus, BsDash } from "react-icons/bs";
 
-const ItemCount = ({stock = 4, inicial = 1}) => {
+const ItemCount = ({stock = 4, setContador, contador, handleAgregar}) => {
 
-    let [contador, setContador] = useState(inicial);
+    // let [contador, setContador] = useState(inicial);
 
     const incrementar = () => {
-        if (stock > contador) {
-            setContador(contador + 1);
-        } else {alert("Lo sentimos, no hay más stock que el seleccionado actualmente.")}
+        (stock > contador) && setContador(contador + 1);
     }
 
     const decrementar = () => {
-        if (contador > 1) {
-            setContador(contador - 1);
-        } 
+        (contador > 1) && setContador(contador - 1);
     }
 
     return (
@@ -31,7 +26,7 @@ const ItemCount = ({stock = 4, inicial = 1}) => {
                     <BsPlus color='white'/>
                 </Button>
             </InputGroup>
-            <Button variant="primary" id="button-agregarCarrito" className="pt-1">
+            <Button variant="primary" id="button-agregarCarrito" className="pt-1" onClick={handleAgregar}>
                 Agregar al Carrito
             </Button>
         </div>

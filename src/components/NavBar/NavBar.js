@@ -38,7 +38,6 @@ const NavBar = () => {
                                 <NavDropdown title="CoderHouse" id="basic-nav-dropdown" className='fw-bold ms-2'>
                                     <NavDropdown.Item className='fw-bold' href="#action/3.1">Mi Perfil</NavDropdown.Item>
                                     <NavDropdown.Item className='fw-bold' href="#action/3.2">Configuración</NavDropdown.Item>
-                                    <Link className='fw-bold dropdown-item' to={"/Nosotros"}>Nosotros</Link>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item className='fw-bold text-danger' href="#action/3.4">Cerrar Sesión</NavDropdown.Item>
                                 </NavDropdown>

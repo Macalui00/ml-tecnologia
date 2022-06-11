@@ -1,26 +1,32 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Col } from 'react-bootstrap';
-import ItemCount from '../ItemCount/ItemCount';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Card, Container,Row} from "react-bootstrap";
 import { Image } from "react-bootstrap";
+import ItemCount from '../ItemCount/ItemCount';
+import { CartContext } from "../Context/CartContext";
 
 const ItemDetail = ({item}) => {
+    const {addItem, isInCart} = useContext(CartContext);
+
+    const [cantidad, setCantidad] = useState(1);
 
     const navigate = useNavigate();
 
     const handleVolver = () => {
-        navigate(-1)
+        navigate(-1);
     }
 
-    const [mostrar, setMostrar] = useState(true);
-
-    const mostrarCounter = () => {
-        setMostrar(!mostrar)
+    const handleAgregar = () => {
+        const itemToCart = {
+            ...item,
+            cantidad: cantidad
+        }
+        addItem(itemToCart);
     }
 
     return (
-        <Container fluid classname='ms-3'>
+        <Container fluid className='ms-3'>
             <Row className="justify-content-center">
                 <Col>
                     <Image width='450' src={item.img} alt={item.nombre} ></Image>
@@ -32,8 +38,18 @@ const ItemDetail = ({item}) => {
                         <p className="text-white fs-5">{item.desc}</p>
                         <h3 className='fw-bold text-success fs-4'>Precio: ${item.precio}</h3>
                         {
-                            mostrar ? <ItemCount stock={item.stock} inicial={1}/> : <div className='m-0 p-0'></div>
+                            (isInCart(item.id)) 
+                                ? 
+                                    <Link to="/cart" className="btn btn-success">Terminar mi compra</Link>
+                                :
+                                    <ItemCount 
+                                        stock={item.stock} 
+                                        setContador={setCantidad} 
+                                        contador={cantidad}
+                                        handleAgregar={handleAgregar}
+                                    /> 
                         }
+                        
                         <Button variant="warning" onClick={handleVolver} className='mt-3 mt-5 fw-bold'>Volver</Button>
                     </Card.Body>
                 </Card> 
