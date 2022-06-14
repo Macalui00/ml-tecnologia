@@ -12,7 +12,7 @@ const Cart = () => {
   
     return (
         <Container className="my-5 container-sm">
-            <h2>Carrito de Compra</h2>
+            <h2>Mi Carrito de Compra</h2>
             <hr/>
             <div className="text-left">
             {
@@ -29,7 +29,7 @@ const Cart = () => {
                     <CartDetail key={item.id} item={item} setTotalPrecio={setTotalPrecio}/>
                 ))
             }</div>
-            <h4>TOTAL: ${totalPrecio}</h4>
+            <h4 className="fs-5 text-warning fw-bold my-4">TOTAL: ${totalPrecio}</h4>
             <Button onClick={emptyCart} className="btn btn-danger">Vaciar Carrito</Button>
             
         </Container>
