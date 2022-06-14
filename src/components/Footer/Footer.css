@@ -1,0 +1,23 @@
+
+body {
+    background-color: #282c34;
+    min-height: 100vh;
+    justify-content: start;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+ul{
+  padding: 0px;
+  margin: 0px;
+}
+
+li{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+a:link, a:visited, a:active {
+  text-decoration:none;
+}
