@@ -41,8 +41,6 @@ export const CartProvider = ({children}) => {
       if (cart.indexOf(prod) >= 0) {
         cart[cart.indexOf(prod)].cantidad = cart[cart.indexOf(prod)].cantidad + item.cantidad;
       }
-      console.log(cart[cart.indexOf(prod)]);
-
     }
 
     const alterQuantity = (item) =>{
@@ -51,8 +49,6 @@ export const CartProvider = ({children}) => {
       if (cart.indexOf(prod) >= 0) {
         cart[cart.indexOf(prod)].cantidad = item.cantidad;
       }
-      
-      console.log(cart[cart.indexOf(prod)]);
     }
     
     return(

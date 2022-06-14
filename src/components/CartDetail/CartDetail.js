@@ -12,7 +12,8 @@ const CartDetail = ({item}) => {
    // console.log(item, item.cantidad)
 
     const [cantidad, setCantidad] = useState(item.cantidad);
-    // console.log(item.cantidad,cantidad)
+
+    const [precio,setPrecio] = useState(item.precio * item.cantidad);
    
     const handleCambiar = () => {
         const itemToCart = {
@@ -20,6 +21,7 @@ const CartDetail = ({item}) => {
             cantidad: cantidad
         }
         alterQuantity(itemToCart);
+        setPrecio(itemToCart.precio * itemToCart.cantidad);
     }
 
   
