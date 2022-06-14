@@ -38,7 +38,7 @@ const CartDetail = ({item}) => {
                     handleOps={handleCambiar}
                 /> 
             }
-            <p className="fs-5 mt-4"><span className='fw-bold'>Precio: </span>${item.precio * item.cantidad}</p>
+            <p className="fs-5 mt-4"><span className='fw-bold'>Precio: </span>${precio}</p>
             <Button onClick={() => {removeItem(item.id)}} className="btn btn-danger">
                 <BsFillTrashFill className='m-0 pb-1 fs-5'/> Eliminar
             </Button>
