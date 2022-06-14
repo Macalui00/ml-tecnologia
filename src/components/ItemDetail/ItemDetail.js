@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button, Col } from 'react-bootstrap';
 import { useContext, useState } from 'react';
 import { Card, Container,Row} from "react-bootstrap";
@@ -7,7 +7,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import { CartContext } from "../Context/CartContext";
 
 const ItemDetail = ({item}) => {
-    const {addItem, isInCart} = useContext(CartContext);
+    const {addItem, isInCart, editItem} = useContext(CartContext);
 
     const [cantidad, setCantidad] = useState(1);
 
@@ -25,6 +25,14 @@ const ItemDetail = ({item}) => {
         addItem(itemToCart);
     }
 
+    const handleEditar = () => {
+        const itemToCart = {
+            ...item,
+            cantidad: cantidad
+        }
+        editItem(itemToCart);
+    }
+
     return (
         <Container fluid className='ms-3'>
             <Row className="justify-content-center">
@@ -38,19 +46,15 @@ const ItemDetail = ({item}) => {
                         <p className="text-white fs-5">{item.desc}</p>
                         <h3 className='fw-bold text-success fs-4'>Precio: ${item.precio}</h3>
                         {
-                            (isInCart(item.id)) 
-                                ? 
-                                    <Link to="/cart" className="btn btn-success">Terminar mi compra</Link>
-                                :
-                                    <ItemCount 
-                                        stock={item.stock} 
-                                        setContador={setCantidad} 
-                                        contador={cantidad}
-                                        handleAgregar={handleAgregar}
-                                    /> 
+                            <ItemCount 
+                                tipo={'item'}
+                                stock={item.stock} 
+                                setContador={setCantidad} 
+                                contador={cantidad}
+                                handleOps={ (isInCart(item.id)) ? handleEditar : handleAgregar}
+                            /> 
                         }
-                        
-                        <Button variant="warning" onClick={handleVolver} className='mt-3 mt-5 fw-bold'>Volver</Button>
+                        <Button variant="warning" onClick={handleVolver} className='mt-3 fw-bold'>Volver</Button>
                     </Card.Body>
                 </Card> 
             </Row>

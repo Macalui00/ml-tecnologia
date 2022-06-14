@@ -8,13 +8,13 @@ export const useCartContext = () => {
 
 export const CartProvider = ({children}) => {
    
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
+
     const addItem = (item) => {
       setCart([...cart, item])
     }
   
     const isInCart = (id) => {
-      // return cart.find((prod) => prod.id === id) me retorna el producto si lo encuentra
       return cart.some((prod) => prod.id === id) // me retorna verdadero o falso si lo encuentra o no.
     }
     
@@ -23,7 +23,7 @@ export const CartProvider = ({children}) => {
     }
   
     const totalQuantity = () => {
-      return cart.reduce((acc, prod) => acc += prod.cantidad, 0)
+      return cart.reduce((acc, prod) => acc += prod.cantidad, 0);
     }
   
     const emptyCart = () => {
@@ -31,9 +31,30 @@ export const CartProvider = ({children}) => {
     }
 
     const removeItem = (id) => {
-        setCart(cart.filter((prod) => prod.id !== id))
+      setCart(cart.filter((prod) => prod.id !== id))
     }
 
+    const editItem = (item) => {
+      
+      const prod = cart.find((prod) => prod.id === item.id); // me retorna el producto si lo encuentra
+
+      if (cart.indexOf(prod) >= 0) {
+        cart[cart.indexOf(prod)].cantidad = cart[cart.indexOf(prod)].cantidad + item.cantidad;
+      }
+      console.log(cart[cart.indexOf(prod)]);
+
+    }
+
+    const alterQuantity = (item) =>{
+      const prod = cart.find((prod) => prod.id === item.id); // me retorna el producto si lo encuentra
+
+      if (cart.indexOf(prod) >= 0) {
+        cart[cart.indexOf(prod)].cantidad = item.cantidad;
+      }
+      
+      console.log(cart[cart.indexOf(prod)]);
+    }
+    
     return(
         <CartContext.Provider value={
             {
@@ -43,7 +64,9 @@ export const CartProvider = ({children}) => {
                 totalPrice, 
                 totalQuantity, 
                 emptyCart,
-                removeItem
+                removeItem,
+                editItem,
+                alterQuantity
             }
         }>
             {children}
