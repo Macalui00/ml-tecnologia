@@ -11,7 +11,7 @@ const CardWidget = () => {
         <Link to={"/cart"}>
             <Card className='cardW mt-1'>
                 <Card.Body className='d-flex p-2 m-0  justify-content-center'>
-                    <BsFillCartFill color='white' className='mb-0'/>
+                    <BsFillCartFill color='white' className='mb-0 fs-5'/>
                     <h4 className='mb-0 ms-2 text-warning'>{totalQuantity()}</h4>
                 </Card.Body>
             </Card>
