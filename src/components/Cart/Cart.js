@@ -1,15 +1,17 @@
 import { useCartContext } from "../Context/CartContext";
 import { Button, Container} from "react-bootstrap";
-import { BsFillTrashFill } from "react-icons/bs";
+// import { BsFillTrashFill } from "react-icons/bs";
 // import { InputGroup } from "react-bootstrap";
 // import { BsPlus, BsDash } from "react-icons/bs";
 import CartDetail from "../CartDetail/CartDetail";
+import { useState } from "react";
 
 const Cart = () => {
     const {cart, totalPrice, emptyCart, removeItem} = useCartContext();
+    const [totalPrecio, setTotalPrecio] = useState(totalPrice());
   
     return (
-        <Container className="my-5">
+        <Container className="my-5 container-sm">
             <h2>Carrito de Compra</h2>
             <hr/>
             <div className="text-left">
@@ -24,10 +26,10 @@ const Cart = () => {
                     //     </Button>
                     //     <hr/>
                     // </div>
-                    <CartDetail key={item.id} item={item}/>
+                    <CartDetail key={item.id} item={item} setTotalPrecio={setTotalPrecio}/>
                 ))
             }</div>
-            <h4>TOTAL: ${totalPrice()}</h4>
+            <h4>TOTAL: ${totalPrecio}</h4>
             <Button onClick={emptyCart} className="btn btn-danger">Vaciar Carrito</Button>
             
         </Container>

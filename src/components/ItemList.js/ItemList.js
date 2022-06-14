@@ -5,7 +5,7 @@ const ItemList = ({items}) => {
 
     return(
         <>
-            <Container fluid>
+            <Container fluid className='container-sm'>
                 <h2 className='fw-bold'>Nuestros productos</h2>
                 <hr/>
                 <Row className='justify-content-center'>

@@ -6,9 +6,9 @@ import { BsFillTrashFill } from "react-icons/bs";
 import { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 
-const CartDetail = ({item}) => {
+const CartDetail = ({item, setTotalPrecio}) => {
 
-    const {removeItem, alterQuantity} = useCartContext();
+    const {removeItem, alterQuantity, totalPrice} = useCartContext();
    // console.log(item, item.cantidad)
 
     const [cantidad, setCantidad] = useState(item.cantidad);
@@ -22,6 +22,7 @@ const CartDetail = ({item}) => {
         }
         alterQuantity(itemToCart);
         setPrecio(itemToCart.precio * itemToCart.cantidad);
+        setTotalPrecio(totalPrice());
     }
 
   

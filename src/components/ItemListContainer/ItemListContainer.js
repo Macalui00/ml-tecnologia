@@ -45,9 +45,6 @@ const ItemListContainer = () => {
                 <ItemList items={items}/>
             }
 
-            
-
-            
         </section>
     )
 }
