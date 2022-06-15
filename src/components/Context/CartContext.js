@@ -12,9 +12,12 @@ export const CartProvider = ({children}) => {
 
     const [totalCantidad, setCantidad] = useState(0);
 
+    const [totalPrecio, setPrecio] = useState(0);
+
     const addItem = (item) => {
       setCart([...cart, item])
       setTotalQuantity();
+      setTotalPrice();
     }
   
     const isInCart = (id) => {
@@ -23,6 +26,10 @@ export const CartProvider = ({children}) => {
     
     const totalPrice = () => {
       return cart.reduce((acc, prod) => acc += (prod.precio * prod.cantidad), 0);
+    }
+
+    const setTotalPrice = () => {
+      setPrecio(totalPrice);
     }
   
     const totalQuantity = () => {
@@ -37,11 +44,13 @@ export const CartProvider = ({children}) => {
     const emptyCart = () => {
       setCart([])
       setTotalQuantity();
+      setTotalPrice();
     }
 
     const removeItem = (id) => {
       setCart(cart.filter((prod) => prod.id !== id))
       setTotalQuantity();
+      setTotalPrice();
     }
 
     const editItem = (item) => {
@@ -51,6 +60,7 @@ export const CartProvider = ({children}) => {
       if (cart.indexOf(prod) >= 0) {
         cart[cart.indexOf(prod)].cantidad = cart[cart.indexOf(prod)].cantidad + item.cantidad;
         setTotalQuantity();
+        setTotalPrice();
       }
     }
 
@@ -60,6 +70,7 @@ export const CartProvider = ({children}) => {
       if (cart.indexOf(prod) >= 0) {
         cart[cart.indexOf(prod)].cantidad = item.cantidad;
         setTotalQuantity();
+        setTotalPrice();
       }
     }
     
@@ -68,9 +79,11 @@ export const CartProvider = ({children}) => {
             {
                 cart, 
                 totalCantidad,
+                totalPrecio,
                 addItem, 
                 isInCart, 
-                totalPrice, 
+                totalPrice,
+                setTotalPrice,
                 totalQuantity, 
                 setTotalQuantity, 
                 emptyCart,

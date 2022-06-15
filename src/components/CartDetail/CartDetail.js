@@ -6,10 +6,9 @@ import { BsFillTrashFill } from "react-icons/bs";
 import { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 
-const CartDetail = ({item, setTotalPrecio}) => {
+const CartDetail = ({item}) => {
 
     const {removeItem, alterQuantity, totalPrice} = useCartContext();
-   // console.log(item, item.cantidad)
 
     const [cantidad, setCantidad] = useState(item.cantidad);
 
@@ -22,7 +21,6 @@ const CartDetail = ({item, setTotalPrecio}) => {
         }
         alterQuantity(itemToCart);
         setPrecio(itemToCart.precio * itemToCart.cantidad);
-        setTotalPrecio(totalPrice());
     }
 
   
@@ -40,7 +38,7 @@ const CartDetail = ({item, setTotalPrecio}) => {
                 /> 
             }
             <p className="fs-5 mt-4"><span className='fw-bold'>Precio: </span>${precio}</p>
-            <Button onClick={() => {removeItem(item.id)}} className="btn btn-danger">
+            <Button onClick={() => {removeItem(item.id);}} className="btn btn-danger">
                 <BsFillTrashFill className='m-0 pb-1 fs-5'/> Eliminar
             </Button>
             <hr/>

@@ -7,7 +7,7 @@ const pedirDatos = () => {
 
             resolve(productos)
             
-        }, 2000) //2 segundos.
+        }, 200) //2 segundos.
 
     })
 }
