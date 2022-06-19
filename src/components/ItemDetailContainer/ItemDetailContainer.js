@@ -3,7 +3,8 @@ import { useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import ItemDetail from "../ItemDetail/ItemDetail"
-import pedirDatos from "../../mock/pedirDatos"
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "../firebase/config"
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState(null)
@@ -14,18 +15,19 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true)
 
-        pedirDatos()
-            .then((resp) => {
-                setItem( resp.find((item) => item.id === Number(itemId)) )
+        // 1.- armar la referencia
+        const docRef = doc(db,"productos", itemId)
+
+        //2.- llamar a firestore
+        getDoc(docRef)
+            .then((doc) => {
+                setItem({id: doc.id, ...doc.data()});
             })
-            .catch((error) => {
-                console.log('ERROR', error)
-            })
-            .finally(() => {
-                setLoading(false)
+            .finally(() =>{
+                setLoading(false);
             })
 
-    }, [])
+    }, [itemId])
 
     return (
         <section className='productos mt-5'>

@@ -1,9 +1,10 @@
 import './ItemListContainer.css';
 import { Spinner } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-import pedirDatos from '../../mock/pedirDatos'; 
 import ItemList from '../ItemList.js/ItemList';
 import { useParams } from "react-router-dom"
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../firebase/config';
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([])
@@ -15,19 +16,20 @@ const ItemListContainer = () => {
     useEffect(() => {
         setLoading(true);
 
-        pedirDatos()
+        // 1- armar la referencia donde indico la base y a que coleccion quiero acceder
+        const productosRef = collection(db, "productos");
+        const q = categoryId ? query(productosRef, where("categoria", "==", categoryId)) : productosRef
+        // 2- (async) llamar a firebase con la referencia anterior
+        getDocs(q)
             .then((resp) => {
-
-                if (!categoryId){
-                    setItems(resp);
-                } else {
-                    setItems(resp.filter((item) => item.categoria.toUpperCase() === categoryId.toUpperCase()))
-                }
-                
+                const newItems = resp.docs.map((doc) => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                })
+                setItems( newItems )
             })
-            .catch((error) => {
-                console.log("ERROR: ", error);
-            } )
             .finally(() => {
                 setLoading(false);
             })
