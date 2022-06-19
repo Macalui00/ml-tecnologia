@@ -41,7 +41,6 @@ const ItemDetail = ({item}) => {
                 </Col>
                 <Card style={{ width: '30rem' }} className='me-3 ms-3 mb-3 p-0 card2'>
                     <Card.Header className='card-header card-header2'><Card.Title className='fw-bold text-warning mb-0 fs-3'>{item.nombre}</Card.Title></Card.Header>
-                    {/* <Card.Img variant="top" src={item.img} alt={item.nombre}/>  */}
                     <Card.Body className="ms-5 me-5">
                         <p className="text-white fs-5">{item.desc}</p>
                         <h3 className='fw-bold text-success fs-4'>Precio: ${item.precio}</h3>
