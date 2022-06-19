@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ml-tecnologia/react-gh-pages/static/css/main.ce5aadda.css",
-    "main.js": "/ml-tecnologia/react-gh-pages/static/js/main.f173c2d4.js",
-    "static/js/787.2bfe55b4.chunk.js": "/ml-tecnologia/react-gh-pages/static/js/787.2bfe55b4.chunk.js",
-    "index.html": "/ml-tecnologia/react-gh-pages/index.html",
-    "main.ce5aadda.css.map": "/ml-tecnologia/react-gh-pages/static/css/main.ce5aadda.css.map",
-    "main.f173c2d4.js.map": "/ml-tecnologia/react-gh-pages/static/js/main.f173c2d4.js.map",
-    "787.2bfe55b4.chunk.js.map": "/ml-tecnologia/react-gh-pages/static/js/787.2bfe55b4.chunk.js.map"
+    "main.css": "/ml-tecnologia/static/css/main.f25d310b.css",
+    "main.js": "/ml-tecnologia/static/js/main.1356e807.js",
+    "static/js/787.2bfe55b4.chunk.js": "/ml-tecnologia/static/js/787.2bfe55b4.chunk.js",
+    "index.html": "/ml-tecnologia/index.html",
+    "main.f25d310b.css.map": "/ml-tecnologia/static/css/main.f25d310b.css.map",
+    "main.1356e807.js.map": "/ml-tecnologia/static/js/main.1356e807.js.map",
+    "787.2bfe55b4.chunk.js.map": "/ml-tecnologia/static/js/787.2bfe55b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce5aadda.css",
-    "static/js/main.f173c2d4.js"
+    "static/css/main.f25d310b.css",
+    "static/js/main.1356e807.js"
   ]
 }
