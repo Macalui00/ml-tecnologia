@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return <header>
-                <Navbar bg="dark" variant="dark" expand="lg">
+                <Navbar bg="dark" variant="dark" expand="lg" id="navbar">
                     <Container>
                         <Navbar.Brand id="titulo" className="ms-3 mt-1"><Link to={"/"} className= 'text-decoration-none fw-bold fs-5 text-warning'>ML Tecnología</Link></Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
