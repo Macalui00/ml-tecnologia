@@ -22,7 +22,7 @@ const CartDetail = ({item}) => {
     }
     
     return (
-        <div key={item.id} className="my-2">
+        <div key={item.id} className="mt-3">
             <h3 className='fw-bold text-warning fs-4'>{item.nombre}</h3>
             {
                 <ItemCount 
@@ -33,11 +33,11 @@ const CartDetail = ({item}) => {
                     handleOps={handleCambiar}
                 /> 
             }
-            <p className="fs-5 mt-4"><span className='fw-bold'>Precio: </span>${precio}</p>
-            <Button onClick={() => {removeItem(item.id);}} className="btn btn-danger fw-bold">
-                <BsFillTrashFill className='m-0 pb-1 fs-4'/> Eliminar
+            <p className="fw-bold fs-5 mt-4"><span>Precio: </span>${precio}</p>
+            <Button onClick={() => {removeItem(item.id);}} className="btn btn-danger fw-bold mb-2">
+                <BsFillTrashFill className='fs-4 m-0 pb-1'/> Eliminar
             </Button>
-            <hr/>
+            <hr className="text-warning opacity-100 mb-0" style={{height: '2px'}}/>
         </div>
 )
 }
