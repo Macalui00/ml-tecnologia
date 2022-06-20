@@ -26,7 +26,7 @@ const Cart = () => {
             {   (cart.length !== 0 ) ?
                     <div>
                         <h4 className="fs-5 text-warning fw-bold my-4">TOTAL: ${totalPrice()}</h4>
-                        <Button onClick={emptyCart} className="btn btn-danger">Vaciar Carrito</Button>
+                        <Button onClick={emptyCart} className="btn btn-danger fw-bold">Vaciar Carrito</Button>
                     </div>
                 :
                     <div></div>

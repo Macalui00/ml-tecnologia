@@ -73,6 +73,12 @@ export const CartProvider = ({children}) => {
         setTotalPrice();
       }
     }
+
+    const getQuantityProduct = (id) => {
+      const producto = cart.find((prod) => prod.id === id); // me retorna la cantidad del producto si lo encuentra
+
+      return (cart.indexOf(producto) >= 0) ? producto.cantidad : 0 ;
+    }
     
     return(
         <CartContext.Provider value={
@@ -89,7 +95,8 @@ export const CartProvider = ({children}) => {
                 emptyCart,
                 removeItem,
                 editItem,
-                alterQuantity
+                alterQuantity,
+                getQuantityProduct
             }
         }>
             {children}

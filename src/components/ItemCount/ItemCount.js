@@ -30,11 +30,11 @@ const ItemCount = ({tipo, stock = 4, setContador, contador, handleOps}) => {
             </InputGroup>
             {
                tipo === 'cart'?  
-                <Button variant="primary" id="button-EditarCantidad" className="pt-1" onClick={handleOps}>
+                <Button variant="primary" id="button-EditarCantidad" className="pt-1 fw-bold" onClick={handleOps}>
                     Editar Cantidad
                 </Button>
                 :
-                <Button variant="primary" id="button-agregarCarrito" className="pt-1" onClick={handleOps}>
+                <Button variant="primary" id="button-agregarCarrito" className="pt-1 fw-bold" onClick={handleOps}>
                     Agregar al Carrito
                 </Button>
             }

@@ -1,0 +1,8 @@
+.stock{
+    opacity: 1;
+    visibility: visible;
+}
+.stock-hidden{
+    opacity: 0;
+    visibility: hidden;
+}

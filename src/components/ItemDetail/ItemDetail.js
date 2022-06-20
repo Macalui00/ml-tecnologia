@@ -7,7 +7,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import { CartContext } from "../Context/CartContext";
 
 const ItemDetail = ({item}) => {
-    const {addItem, isInCart, editItem} = useContext(CartContext);
+    const {addItem, isInCart, editItem, getQuantityProduct} = useContext(CartContext);
 
     const [cantidad, setCantidad] = useState(1);
 
@@ -32,7 +32,7 @@ const ItemDetail = ({item}) => {
         }
         editItem(itemToCart);
     }
-
+console.log(item.stock - getQuantityProduct(item.id))
     return (
         <Container fluid className='ms-3'>
             <Row className="justify-content-center">
@@ -44,16 +44,18 @@ const ItemDetail = ({item}) => {
                     <Card.Body className="ms-5 me-5">
                         <p className="text-white fs-5">{item.desc}</p>
                         <h3 className='fw-bold text-success fs-4'>Precio: ${item.precio}</h3>
-                        {
+                        { ((item.stock - getQuantityProduct(item.id)) > 0) ?
                             <ItemCount 
                                 tipo={'item'}
-                                stock={item.stock} 
+                                stock={item.stock - getQuantityProduct(item.id)} 
                                 setContador={setCantidad} 
                                 contador={cantidad}
                                 handleOps={ (isInCart(item.id)) ? handleEditar : handleAgregar}
                             /> 
+                            : 
+                            <h2 className="text-warning rounded-pill fw-bold fs-4 bg-dark mt-5 py-2">SIN STOCK</h2>
                         }
-                        <Button variant="warning" onClick={handleVolver} className='mt-3 fw-bold'>Volver</Button>
+                        <Button variant="warning" onClick={handleVolver} className='mt-5 fw-bold'>Volver</Button>
                     </Card.Body>
                 </Card> 
             </Row>
