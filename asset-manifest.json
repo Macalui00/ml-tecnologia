@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ml-tecnologia/static/css/main.c396ab8e.css",
-    "main.js": "/ml-tecnologia/static/js/main.8dffd4ff.js",
+    "main.css": "/ml-tecnologia/static/css/main.9d7d8b6d.css",
+    "main.js": "/ml-tecnologia/static/js/main.d5116f37.js",
     "static/js/787.2bfe55b4.chunk.js": "/ml-tecnologia/static/js/787.2bfe55b4.chunk.js",
     "index.html": "/ml-tecnologia/index.html",
-    "main.c396ab8e.css.map": "/ml-tecnologia/static/css/main.c396ab8e.css.map",
-    "main.8dffd4ff.js.map": "/ml-tecnologia/static/js/main.8dffd4ff.js.map",
+    "main.9d7d8b6d.css.map": "/ml-tecnologia/static/css/main.9d7d8b6d.css.map",
+    "main.d5116f37.js.map": "/ml-tecnologia/static/js/main.d5116f37.js.map",
     "787.2bfe55b4.chunk.js.map": "/ml-tecnologia/static/js/787.2bfe55b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c396ab8e.css",
-    "static/js/main.8dffd4ff.js"
+    "static/css/main.9d7d8b6d.css",
+    "static/js/main.d5116f37.js"
   ]
 }
