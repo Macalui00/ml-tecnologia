@@ -34,7 +34,7 @@ const ItemCount = ({tipo, stock = 4, setContador, contador, handleOps}) => {
                     Editar Cantidad
                 </Button>
                 :
-                <Button variant="primary" id="button-agregarCarrito" className="pt-1 fw-bold" onClick={handleOps}>
+                <Button variant="primary" id="button-agregarCarrito" className="pt-1 fw-bold mt-1 mb-4" onClick={handleOps}>
                     Agregar al Carrito
                 </Button>
             }

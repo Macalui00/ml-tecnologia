@@ -29,7 +29,7 @@ const Item = ({item}) => {
                 </ul> */}
                     
                 <Link to={`/item/${item.id}`}>
-                    <button className="btn btn-primary my-2">Ver más</button>
+                    <button className="btn btn-primary my-2 fw-bold">Ver más</button>
                 </Link>
             </Card.Body>
         </Card> 
