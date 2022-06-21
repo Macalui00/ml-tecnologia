@@ -15,12 +15,12 @@ const Item = ({item}) => {
                 {
                     ((item.stock - getQuantityProduct(item.id)) === 0) ? 
                         <ul className='m-0 p-0 text-dark'>
-                            <li><h2 className="text-warning rounded-pill fw-bold fs-4 bg-dark py-1">SIN STOCK</h2></li>
-                            <li><p className='detalle fw-bold text-success fs-4'>Precio: ${item.precio}</p></li>
+                            <li><h2 className="text-warning rounded-pill fw-bold fs-5 bg-dark py-1">SIN STOCK</h2></li>
+                            <li><p className='detalle fw-bold text-success fs-5'>Precio: ${item.precio}</p></li>
                         </ul>
                     : 
                         <ul className='m-0 p-0 text-dark'>
-                            <li><p className='detalle fw-bold text-success fs-4'>Precio: ${item.precio}</p></li>
+                            <li><p className='detalle fw-bold text-success fs-5'>Precio: ${item.precio}</p></li>
                         </ul>
                 }
                 {/* <ul className='m-0 p-0 text-dark'>
