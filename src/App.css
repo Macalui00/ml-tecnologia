@@ -24,3 +24,60 @@
   width: 100% !important;
   max-width: 100% !important;
 }
+
+@media (min-width: 100px) and (max-width: 299px) {
+  .App-main {
+      padding-left: 5px !important;
+      margin-left: 5px !important;
+  }
+  img{
+    width: 300px !important;
+  }
+  .card{
+    width: 20rem !important;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .App-main {
+      padding-left: 5px !important;
+      margin-left: 5px !important;
+  }
+  img{
+    width: 350px !important;
+  }
+  .card{
+    width: 20rem !important;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 800px) {
+  .imagen-item.float-start {
+    float: none !important;
+  }
+  .detalle-item.float-end {
+    float: none !important;
+  }
+
+  .item-detalle-contenedor {
+    justify-content: center!important;
+    display: block !important;
+    text-align: center !important;
+}
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+
+  .imagen-item.float-start {
+    float: none !important;
+  }
+  .detalle-item.float-end {
+    float: none !important;
+  }
+
+  .item-detalle-contenedor {
+    justify-content: center!important;
+    display: block !important;
+    text-align: center !important;
+}
+}

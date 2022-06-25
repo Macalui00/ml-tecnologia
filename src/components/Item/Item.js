@@ -6,7 +6,7 @@ import './Item.css';
 
 const Item = ({item}) => {
     const {getQuantityProduct} = useContext(CartContext);
-    console.log((item.stock - getQuantityProduct(item.id)) === 0, "stock", item.stock, getQuantityProduct(item.id), item.stock - getQuantityProduct(item.id))
+
     return(
         <Card style={{ width: '18rem' }} className='ms-3 me-3 mb-3 p-0' key={item.id}>
             <Card.Header className='card-header'><Card.Title className='fw-bold text-warning mb-0'>{item.nombre}</Card.Title></Card.Header>

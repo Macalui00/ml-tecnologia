@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
     }, [itemId])
 
     return (
-        <section className='productos mt-5'>
+        <section className='m-0'>
         
             {
                 loading
