@@ -23,10 +23,6 @@ const Item = ({item}) => {
                             <li><p className='detalle fw-bold text-success fs-5'>Precio: ${item.precio}</p></li>
                         </ul>
                 }
-                {/* <ul className='m-0 p-0 text-dark'>
-                    <li className={`stock ${((item.stock - getQuantityProduct(item.id)) > 0) ? 'stock-hidden' : ''}`}><h2 className="text-danger fw-bold fs-4">SIN STOCK</h2></li>
-                    <li><p className='detalle fw-bold text-success'>Precio: ${item.precio}</p></li>
-                </ul> */}
                     
                 <Link to={`/item/${item.id}`}>
                     <button className="btn btn-primary my-2 fw-bold">Ver más</button>

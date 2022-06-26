@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import { useContext, useState } from 'react';
-import { Card, Container,Row} from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 import ItemCount from '../ItemCount/ItemCount';
 import { CartContext } from "../Context/CartContext";
