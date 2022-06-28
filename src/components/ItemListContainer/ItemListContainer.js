@@ -21,14 +21,9 @@ const ItemListContainer = () => {
                 : 
                 <>
                     <Buscar buscarNombre={buscarNombre} setBuscarNombre={setBuscarNombre}/>
-                    <ItemList items={items.filter(
-                                        (item) =>{
-                                            if (buscarNombre === ""){
-                                                return item
-                                            } else if (item.nombre.toLowerCase().includes(buscarNombre.toLowerCase())){
-                                                return item
-                                            }
-                                        }
+                    <ItemList items={ !buscarNombre ? items : items.filter(
+                                        (item) =>
+                                            item.nombre.toLowerCase().includes(buscarNombre.toLowerCase())
                                     )
                     }/>
                 </>

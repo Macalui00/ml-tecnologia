@@ -1,4 +1,4 @@
-import { Form, FormControl, Button, Container, Row } from "react-bootstrap";
+import { Form, FormControl, Container} from "react-bootstrap";
 
 const Buscar = ({buscarNombre, setBuscarNombre}) => {
 
@@ -13,7 +13,6 @@ const Buscar = ({buscarNombre, setBuscarNombre}) => {
                     value={buscarNombre}
                     onChange={(event) => {
                         setBuscarNombre(event.target.value);
-                        console.log(event.target.value)
                     }}
                     style={{width:'500px', fontSize:'20px'}}
                     />
@@ -22,7 +21,6 @@ const Buscar = ({buscarNombre, setBuscarNombre}) => {
                         className="fw-bold fs-5" 
                         onClick={(event) => {
                             setBuscarNombre(event.target.value);
-                            console.log(event.target.value)
                         }
                         }
                     >
