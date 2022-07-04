@@ -20,7 +20,6 @@ const LoginScreen = () => {
     const {login, error} = useAuthContext()
 
     const loggearse = (e) => {
-        console.log(e)
         login(e)
     }
 

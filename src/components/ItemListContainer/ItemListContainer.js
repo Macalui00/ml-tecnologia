@@ -1,16 +1,14 @@
 import './ItemListContainer.css';
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Button } from 'react-bootstrap';
 import ItemList from '../ItemList.js/ItemList';
 import { useProductos } from './useProductos';
-import { useState } from "react";
 import Buscar from '../Buscar/Buscar';
 
 const ItemListContainer = () => {
-    
-    const [buscarNombre, setBuscarNombre] = useState("");
 
-    const { items, loading } = useProductos()
-    
+    const {items, loading, buscarNombre,  setBuscarNombre, orderPrice, buscarPorNombre, ordenarAsc, 
+        ordenarDesc, orderByPriceAsc, orderByPriceDesc, orderByStock} = useProductos();
+
     return (
         <section className='productos mt-3'>
             {
@@ -21,10 +19,16 @@ const ItemListContainer = () => {
                 : 
                 <>
                     <Buscar buscarNombre={buscarNombre} setBuscarNombre={setBuscarNombre}/>
-                    <ItemList items={ !buscarNombre ? items : items.filter(
-                                        (item) =>
-                                            item.nombre.toLowerCase().includes(buscarNombre.toLowerCase())
-                                    )
+                    <div className='mb-3'>  
+                        <span className="fw-bold me-3" style={{fontSize:'18px'}}>Ordenar por:</span>
+                        <Button variant={(orderPrice === "ASC") ? "warning" : "light"} className='fw-bold me-3' onClick={ordenarAsc}>Precio Asc.</Button>
+                        <Button variant={(orderPrice !== "ASC") ? "warning" : "light"} className='fw-bold' onClick={ordenarDesc}>Precio Desc.</Button>
+                    </div>
+                    <ItemList items={
+                        (orderPrice === "ASC") ?
+                            orderByStock(orderByPriceAsc(buscarPorNombre(buscarNombre, items)))
+                        : 
+                            orderByStock(orderByPriceDesc(buscarPorNombre(buscarNombre, items)))
                     }/>
                 </>
             }

@@ -7,10 +7,64 @@ import { db } from '../firebase/config';
 
 export const useProductos = () => {
     const [items, setItems] = useState([])
+      
+    const [buscarNombre, setBuscarNombre] = useState("");
+
+    const [orderPrice, setOrderPrice] = useState("ASC");
 
     const [loading, setLoading] = useState(true);
 
-    const {categoryId} = useParams()
+    const {categoryId} = useParams();
+
+    const buscarPorNombre = (nombre, listado) => {
+        return !nombre ? listado : listado.filter(
+            (item) =>
+                item.nombre.toLowerCase().includes(nombre.toLowerCase())
+        )
+    }
+
+    const ordenarAsc = () => {
+        setOrderPrice("ASC")
+    }
+
+    const ordenarDesc = () => {
+        setOrderPrice("DESC")
+    }
+        
+    const orderByStock = (items) => {
+        return items.sort(function (a, b) {
+            if (a.stock === 0) {
+              return 1;
+            }
+            if (b.stock === 0) {
+              return -1;
+            }
+            return 0;
+        })
+    }
+
+    const orderByName = (items) => {
+        return items.sort(function (a, b) {
+            if (a.nombre > b.nombre) {
+              return 1;
+            }
+            if (a.nombre < b.nombre) {
+              return -1;
+            }
+            return 0;
+        })
+    }
+
+    const orderByPriceDesc = (items) => {
+        return items.sort(function (a, b) {
+            return (b.precio - a.precio)
+        })
+    }
+    const orderByPriceAsc = (items) => {
+        return items.sort(function (a, b) {
+            return (a.precio - b.precio)
+        })
+    }
 
     useEffect(() => {
         setLoading(true);
@@ -36,6 +90,17 @@ export const useProductos = () => {
     }, [categoryId])
 
     return {
-        items, loading
+        items, 
+        loading, 
+        buscarNombre, 
+        setBuscarNombre, 
+        orderPrice, 
+        buscarPorNombre,
+        ordenarAsc, 
+        ordenarDesc, 
+        orderByName, 
+        orderByPriceAsc,
+        orderByPriceDesc,
+        orderByStock
     }
 }
