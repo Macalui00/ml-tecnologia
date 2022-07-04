@@ -2,6 +2,7 @@ import { useCartContext } from "../Context/CartContext";
 import { Button, Container} from "react-bootstrap";
 import CartDetail from "../CartDetail/CartDetail";
 import { Link } from "react-router-dom";
+import TitleSection from "../TitleSection/TitleSection";
 
 const Cart = () => {
     const {cart, totalPrice, emptyCart} = useCartContext();
@@ -9,9 +10,8 @@ const Cart = () => {
     return (
         <section className=''>
             <Container className="container-sm container-fluid my-5">
-                <h2 className="fw-bold bg-dark fs-3 py-2 px-5 mb-0">Carrito de Compra</h2>
-                <hr className="mt-0 text-warning opacity-100" style={{height: '2px'}}/>
-            
+                <TitleSection title={"Carrito de Compra"}/>
+                
                 {   (cart.length !== 0 ) ?
                         cart.map((item) => (
                             <CartDetail key={item.id} item={item}/>

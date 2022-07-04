@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from "../Context/CartContext";
 import './Item.css';
+import MensajePill from '../MensajePill/MensajePill';
 
 const Item = ({item}) => {
     const {getQuantityProduct} = useContext(CartContext);
@@ -15,7 +16,7 @@ const Item = ({item}) => {
                 {
                     ((item.stock - getQuantityProduct(item.id)) === 0) ? 
                         <ul className='m-0 p-0 text-dark'>
-                            <li><h2 className="text-warning rounded-pill fw-bold fs-5 bg-dark py-1">SIN STOCK</h2></li>
+                            <li><MensajePill mensaje={"SIN STOCK"} clases={"fs-5 py-1"}/></li>
                             <li><p className='detalle fw-bold text-success fs-5'>Precio: ${item.precio}</p></li>
                         </ul>
                     : 
