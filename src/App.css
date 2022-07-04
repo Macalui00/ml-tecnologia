@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Quantico:wght@400;700&family=Rubik+Mono+One&family=Share&family=Share+Tech+Mono&family=Sigmar+One&family=Ubuntu:wght@300;500&display=swap');
+
 .App {
   text-align: center;
   width: 100% !important;
   max-width: 100% !important;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
 }
 
 .App-main {
@@ -20,10 +24,43 @@
 .App-link {
   color: #61dafb;
 }
+
 .container{
   width: 100% !important;
   max-width: 100% !important;
 }
+
+/*=====================ESTILOS DE LETRA=======================*/
+.font-Audiowide{
+  font-family: 'Audiowide', cursive;
+}
+.font-Bungee{
+  font-family: 'Bungee', cursive;
+}
+.font-Quantico{
+  font-family: 'Quantico', sans-serif;
+}
+.font-Rubik-Mono-One{
+  font-family: 'Rubik Mono One', sans-serif;
+}
+.font-Share{
+  font-family: 'Share', cursive;
+}
+.font-Share-Tech-Mono{
+  font-family: 'Share Tech Mono', monospace;
+}
+.font-Sigmar-One{
+  font-family: 'Sigmar One', cursive;
+}
+.font-Ubuntu-300{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+}
+.font-Ubuntu-500{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+}
+/*============================================================*/
 
 @media (min-width: 100px) and (max-width: 299px) {
   .App-main {

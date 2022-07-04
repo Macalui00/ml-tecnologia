@@ -10,18 +10,18 @@ const NavBar = () => {
     return <header>
                 <Navbar bg="dark" variant="dark" expand="lg" id="navbar">
                     <Container>
-                        <Navbar.Brand id="titulo" className="ms-3 mt-1"><Link to={"/"} className= 'text-decoration-none fw-bold fs-5 text-warning'>ML Tecnología</Link></Navbar.Brand>
+                        <Navbar.Brand id="titulo" className="ms-3 mt-1"><Link to={"/"} className= 'text-decoration-none fw-bold fs-4 text-warning font-Bungee'>ML Tecnología</Link></Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <NavDropdown title="TV, Audio y Video" id="basic-nav-dropdown" className='fw-bold fs-5'>
+                                <NavDropdown title="TV, Audio y Video" id="basic-nav-dropdown" className='fw-bold fs-5 pt-1'>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/tv"}>TV</Link>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/proyectores"}>Proyectores</Link>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/soporte"}>Soporte</Link>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/audio"}>Audio</Link>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/camaras"}>Cámaras y Video Cámaras</Link>
                                 </NavDropdown>
-                                <NavDropdown title="Celulares, Notebooks e Informática" id="basic-nav-dropdown" className='fw-bold fs-5'>
+                                <NavDropdown title="Celulares, Notebooks e Informática" id="basic-nav-dropdown" className='fw-bold fs-5 pt-1'>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/celulares"}>Celulares</Link>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/tablets"}>Tablets</Link>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/notebooks"}>Notebooks</Link>
@@ -29,7 +29,7 @@ const NavBar = () => {
                                     <Link className='fw-bold dropdown-item' to={"/categorias/impresoras"}>Impresoras</Link>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/cartuchos"}>Cartuchos</Link>
                                 </NavDropdown>
-                                <NavDropdown title="Accesorios" id="basic-nav-dropdown" className='fw-bold fs-5'>
+                                <NavDropdown title="Accesorios" id="basic-nav-dropdown" className='fw-bold fs-5 pt-1'>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/teclados"}>Teclados</Link>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/pads"}>Pads</Link>
                                     <Link className='fw-bold dropdown-item' to={"/categorias/parlantes"}>Parlantes</Link>
@@ -38,7 +38,7 @@ const NavBar = () => {
                             </Nav>
                             <Nav className="me-5 justify-content-end">
                                 <CardWidget/>
-                                <NavDropdown title="CoderHouse" id="basic-nav-dropdown" className='fw-bold ms-2 fs-5'>
+                                <NavDropdown title="CoderHouse" id="basic-nav-dropdown" className='fw-bold ms-2 fs-5 pt-1'>
                                     <NavDropdown.Item className='fw-bold' href="#action/3.1">Mi Perfil</NavDropdown.Item>
                                     <NavDropdown.Item className='fw-bold' href="#action/3.2">Configuración</NavDropdown.Item>
                                     <NavDropdown.Divider />

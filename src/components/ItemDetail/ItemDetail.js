@@ -6,6 +6,7 @@ import { Image } from "react-bootstrap";
 import ItemCount from '../ItemCount/ItemCount';
 import { CartContext } from "../Context/CartContext";
 import { Link } from "react-router-dom";
+import MensajePill from "../MensajePill/MensajePill";
 
 const ItemDetail = ({item}) => {
     const {addItem, isInCart, editItem, getQuantityProduct} = useContext(CartContext);
@@ -62,8 +63,7 @@ const ItemDetail = ({item}) => {
                                                 handleOps={ (isInCart(item.id)) ? handleEditar : handleAgregar}
                                             /> 
                                         : 
-                                            <h2 className="text-warning rounded-pill fw-bold fs-4 bg-dark mt-5 py-2">SIN STOCK</h2>
-                                    
+                                            <MensajePill mensaje={"SIN STOCK"} clases={"fs-4 my-3 py-2"}/>
                                 }
                                 <Button variant="warning" onClick={handleVolver} className='fw-bold'>Volver</Button>
                             </Card.Body>

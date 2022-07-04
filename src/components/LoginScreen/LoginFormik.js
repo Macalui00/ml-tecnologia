@@ -1,4 +1,5 @@
 import { Formik } from "formik";
+import MensajeAlerta from "../MensajeAlerta/MensajeAlerta";
 
 const LoginFormik = ({loggearse, schema, error}) => {
     
@@ -21,8 +22,7 @@ const LoginFormik = ({loggearse, schema, error}) => {
                         placeholder="Email de usuario"
                         className="form-control my-3"
                     />
-                    {formik.errors.email && <p className="alert alert-danger py-1 mt-0 mb-4 fw-bold fs-6">{formik.errors.email}</p>}
-                    {error.email && <p className="alert alert-danger py-1 mt-1 mb-3 fw-bold" style={{fontSize:'16px'}}>{error.email}</p>}
+                    {formik.errors.email && <MensajeAlerta mensaje={formik.errors.email} clases={"py-1 mt-0 mb-4 fw-bold fs-6"}/>}
 
                     <input
                         value={formik.values.password}
@@ -32,8 +32,14 @@ const LoginFormik = ({loggearse, schema, error}) => {
                         placeholder="Contraseña"
                         className="form-control my-3"
                     />
-                    {formik.errors.password && <p className="alert alert-danger py-1 mt-0 mb-4 fw-bold fs-6">{formik.errors.password}</p>}
-                    {error.password && <p className="alert alert-danger py-1 mt-0 mb-4 fw-bold" style={{fontSize:'16px'}}>{error.password}</p>}
+                    {formik.errors.password && <MensajeAlerta mensaje={formik.errors.password} clases={"py-1 mt-0 mb-4 fw-bold fs-6"}/>}
+                    
+                    {
+                        (!(formik.errors.password || formik.errors.email) && (error.email || error.password)) ? 
+                            <MensajeAlerta mensaje={"Usuario o Contraseña Incorrectos"} clases={"py-1 mt-3 mb-4 fw-bold fs-6"}/> 
+                        : 
+                            <></>
+                    }
                     
                     <button type="submit" className="btn btn-warning my-2 fw-bold">Enviar</button>
                 </form>
