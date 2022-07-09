@@ -18,15 +18,16 @@ const schema = Yup.object().shape({
 
 const LoginScreen = () => {
 
-    const {crearUsuario, error, iniciarSesion, isRegistrando, setIsRegistrando} = useAuthContext();
+    const {crearUsuario, error, iniciarSesion, isRegistrando} = useAuthContext();
 
     const loggearse = (e) => {
-
+        console.log(isRegistrando)
         if (isRegistrando) {
           crearUsuario(e);
         }
     
         if (!isRegistrando) {
+            console.log("iniciar sesion")
           iniciarSesion(e);
         }
       };
@@ -39,13 +40,12 @@ const LoginScreen = () => {
                 </Row>
                 <Row className="align-items-center justify-content-center">
                     {isRegistrando ? <TitleSection title={"Singup"}/> : <TitleSection title={"Login"}/>}
-                    {/* <TitleSection title={"Login"}/> */}
                     <LoginFormik loggearse={loggearse} schema={schema} error={error}/>
-                    <button onClick={() => setIsRegistrando(!isRegistrando)}>
+                    {/* <button className="btn btn-warning my-2 fw-bold" onClick={() => setIsRegistrando(!isRegistrando)}>
                         {isRegistrando
                         ? "¿Ya tienes cuenta? ¡Inicia sesión"
                         : "¿No tienes cuenta? ¡Regístrate gratis!"}
-                    </button>
+                    </button> */}
                     <hr className="mt-4 text-warning opacity-100" style={{height: '2px'}}/>                   
                 </Row>
             </Container>

@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react"
-import { application } from "../firebase/config";
+import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import {auth} from '../firebase/config'
 
 export const AuthContext = createContext()
 
@@ -15,44 +16,94 @@ export const AuthProvider = ({children}) => {
 
   const crearUsuario = (values) => {
     const {email, password} = values
-    application
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((usuarioFirebase) => {
         console.log("usuario creado:", usuarioFirebase);
-        // setUsuario(usuarioFirebase.user);
+        setUsuario(usuarioFirebase);
       }).catch((error) => {
-        setError({
-          errorCode: error.code,
-          errorMessage: error.message
-        })
+
+        if(error.code === "auth/email-already-in-use"){
+          setError({
+              errorCode: error.code,
+              errorMessage: "Existe un usuario registrado con ese mail."
+            });
+        } else if(error.code === "auth/invalid-email"){
+          setError({
+            errorCode: error.code,
+            errorMessage: "Dirección de email inválida."
+          })
+        } else if (error.code === "auth/operation-not-allowed"){
+          setError({
+                errorCode: error.code,
+                errorMessage: "El usuario o contraseña no estan habilitados."
+              });
+        } else if (error.code === "auth/weak-password"){
+          setError({
+                errorCode: error.code,
+                errorMessage: "La contraseña no es lo suficientemente segura."
+              });
+        } else {
+          setError({
+            errorCode: "Others",
+            errorMessage: "Lo sentimos, ha ocurrido un error."
+          });
+        }
+
       });
   };
 
-  const iniciarSesion = (email, password) => {
-    application
-      .auth()
-      .signInWithEmailAndPassword(email, password)
+  const iniciarSesion = (values) => {
+    const {email, password} = values
+    signInWithEmailAndPassword(auth, email, password)
       .then((usuarioFirebase) => {
-        console.log("sesión iniciada con:", usuarioFirebase.user);
-        // setUsuario(usuarioFirebase.user);
+        
+        setUsuario(usuarioFirebase);
+
       }).catch((error) => {
-        setError({
-          errorCode: error.code,
-          errorMessage: error.message
-        })
+        
+        if(error.code === "auth/invalid-email" || error.code === "auth/wrong-password" ){
+          setError({
+              errorCode: error.code,
+              errorMessage: "Email o contraseña inválida."
+            });
+        } else if(error.code === "auth/user-disabled"){
+          setError({
+            errorCode: error.code,
+            errorMessage: "El usuario está deshabilitado."
+          })
+        } else if (error.code === "auth/user-not-found"){
+          setError({
+                errorCode: error.code,
+                errorMessage: "Usted no tiene un usuario registrado."
+              });
+        } else {
+          setError({
+            errorCode: "Others",
+            errorMessage: "Ha habido un error, revise sus datos o intente registrarse."
+          });
+        }   
+
       });
   };
 
   useEffect(() => {
-    application.auth().onAuthStateChanged((usuarioFirebase) => {
+    onAuthStateChanged(auth,(usuarioFirebase) => {
       console.log("ya tienes sesión iniciada con:", usuarioFirebase);
-      // setUsuario(usuarioFirebase);
+      setUsuario(usuarioFirebase);
     });
   }, []);
 
+  const cerrarSesion = () => {
+    signOut(auth).then(() => {
+      console.log("cerrar")
+    }).catch((error) => {
+      console.log(error)
+    });
+  };
+
+
     return (
-        <AuthContext.Provider value={{usuario, error, crearUsuario, iniciarSesion, isRegistrando, setIsRegistrando}}>
+        <AuthContext.Provider value={{usuario, error, crearUsuario, iniciarSesion, isRegistrando, setIsRegistrando, cerrarSesion}}>
             {children}
         </AuthContext.Provider>
     )

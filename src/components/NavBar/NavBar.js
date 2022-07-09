@@ -1,11 +1,11 @@
 import './NavBar.css';
 import CardWidget from './../CardWidget/CardWidget.js';
-import { useAuthContext } from '../Context/AuthContext';
+import { useAuthContext } from '../Context/AuthContext-Firebase';
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
-    const {logout} = useAuthContext();
+    const {cerrarSesion} = useAuthContext();
 
     return <header>
                 <Navbar bg="dark" variant="dark" expand="lg" id="navbar">
@@ -42,7 +42,7 @@ const NavBar = () => {
                                     <NavDropdown.Item className='fw-bold' href="#action/3.1">Mi Perfil</NavDropdown.Item>
                                     <NavDropdown.Item className='fw-bold' href="#action/3.2">Configuración</NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item className='fw-bold text-danger logout' onClick={logout}>Cerrar Sesión</NavDropdown.Item>
+                                    <NavDropdown.Item className='fw-bold text-danger logout' onClick={cerrarSesion}>Cerrar Sesión</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
                         </Navbar.Collapse>

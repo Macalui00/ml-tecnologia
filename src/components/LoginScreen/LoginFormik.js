@@ -1,8 +1,9 @@
 import { Formik } from "formik";
 import MensajeAlerta from "../MensajeAlerta/MensajeAlerta";
+import { useAuthContext } from "../Context/AuthContext-Firebase";
 
 const LoginFormik = ({loggearse, schema, error}) => {
-    
+    const {isRegistrando, setIsRegistrando} = useAuthContext();
     return(
         <Formik
                 initialValues={{
@@ -35,13 +36,22 @@ const LoginFormik = ({loggearse, schema, error}) => {
                     {formik.errors.password && <MensajeAlerta mensaje={formik.errors.password} clases={"py-1 mt-0 mb-4 fw-bold fs-6"}/>}
                     
                     {
-                        (!(formik.errors.password || formik.errors.email) && (error.email || error.password)) ? 
-                            <MensajeAlerta mensaje={"Usuario o Contraseña Incorrectos"} clases={"py-1 mt-3 mb-4 fw-bold fs-6"}/> 
+                        (!(formik.errors.password || formik.errors.email) && (error.errorMessage)) ? 
+                            <MensajeAlerta 
+                                mensaje={(error.errorMessage) ? error.errorMessage : "Usuario o Contraseña Incorrectos"} 
+                                clases={"py-1 mt-3 mb-4 fw-bold fs-6"}
+                            /> 
                         : 
                             <></>
                     }
                     
                     <button type="submit" className="btn btn-warning my-2 fw-bold">Enviar</button>
+                    <br/>
+                    <button type="button" className="btn btn-warning mt-2 fw-bold" onClick={() => setIsRegistrando(!isRegistrando)}>
+                        {isRegistrando
+                        ? "¿Ya tienes cuenta? ¡Inicia sesión"
+                        : "¿No tienes cuenta? ¡Regístrate gratis!"}
+                    </button>
                 </form>
             )}
         </Formik>
