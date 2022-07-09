@@ -25,7 +25,7 @@ const LoginScreen = () => {
     }
 
     return(
-        <section className=''>
+        <section className='d-flex align-items-center justify-content-center'>
             <Container className="container-sm container-fluid my-5">
                 <Row className="my-4">
                     <Marca/>
