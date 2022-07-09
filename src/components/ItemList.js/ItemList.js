@@ -7,7 +7,7 @@ const ItemList = ({items}) => {
     return(
         <>
             <Container fluid className='container-sm mb-5'>
-                <TitleSection title={"Nuestros Productos"} tamaño={"2"}/>
+                <TitleSection title={"Nuestros Productos"} tamano={"2"}/>
                 <Row className='justify-content-center'>
                     { (items.length) ?
                         items.map((item) => <Item key={item.id} item={item}/>)

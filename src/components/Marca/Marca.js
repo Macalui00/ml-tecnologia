@@ -1,8 +1,8 @@
 
-const Marca = () => {
+const Marca = ({tamano = "1"}) => {
 
     return(
-        <h1 className= 'text-decoration-none fw-bold text-warning font-Bungee'>ML Tecnología</h1>
+        <h1 className={'fw-bold text-warning font-Bungee fs-'+tamano}>ML Tecnología</h1>
     )
 }
 export default Marca

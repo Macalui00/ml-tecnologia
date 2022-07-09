@@ -10,7 +10,9 @@ const Item = ({item}) => {
 
     return(
         <Card style={{ width: '18rem' }} className='ms-3 me-3 mb-3 p-0' key={item.id}>
-            <Card.Header className='card-header'><Card.Title className='fw-bold text-warning mb-0'>{item.nombre}</Card.Title></Card.Header>
+            <Card.Header className='card-header'>
+                <Card.Title className='fw-bold text-warning mb-0'>{item.nombre}</Card.Title>
+            </Card.Header>
             <Card.Img variant="top" src={item.img} alt={item.nombre} className="img-fluid mx-auto d-block"/>
             <Card.Body className='row align-items-center justify-content-center'>
                 {

@@ -6,12 +6,23 @@ Este proyecto trata de un e-commerce de un local de tecnología. Donde se puede 
 Para acceder al proyecto y probarlo de manera online, acceder al siguiente enlace:
 https://macalui00.github.io/ml-tecnologia/
 
-## Pagina principal y detalle de item
-![](public/ML-Tecnologia-1.gif)
+## Inicio y Cierre de Sesión
+![](public/LOGIN-LOGOUT.gif)
 
-## Seleccion de categoria
+## Busqueda, Filtrado y Ordenamiento
 ![](public/ML-Tecnologia-2.gif)
+
+## Busqueda, Filtrado y Ordenamiento
+![](public/BUSQUEDA-FILTRADO-ORDENAMIENTO.gif)
+
+## Selección de Producto y Agregado al Carrito
+![](public/SELECCION-PRODUCTO.gif)
+
+## Funcionamiento del Carrito de Compras
+![](public/FUNCIONAMIENTO-CARRITO.gif)
 
 ## Librerías utilizadas
 
-Por el momento la única libreria que se esta utilizando es Bootstrap.
+Las librerías utilizadas para este proyecto son: 
+- Bootstrap
+- Formik

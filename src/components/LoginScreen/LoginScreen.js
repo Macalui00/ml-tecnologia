@@ -5,6 +5,7 @@ import TitleSection from "../TitleSection/TitleSection";
 import LoginFormik from "./LoginFormik";
 import Marca from "../Marca/Marca";
 import * as Yup from 'yup';
+import Separador from "../Separador/Separador";
 
 const schema = Yup.object().shape({
     email: Yup.string()
@@ -33,7 +34,7 @@ const LoginScreen = () => {
                 <Row className="align-items-center justify-content-center">
                     <TitleSection title={"Login"}/>
                     <LoginFormik loggearse={loggearse} schema={schema} error={error}/>
-                    <hr className="mt-4 text-warning opacity-100" style={{height: '2px'}}/>                   
+                    <Separador clases="mt-4"/>            
                 </Row>
             </Container>
         </section>
