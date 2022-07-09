@@ -1,6 +1,21 @@
 # Proyecto Final - CoderHouse - React Js: ML-Tecnologia
 
-Este proyecto trata de un e-commerce de un local de tecnología. Donde se puede ir por las diferentes categorias de productos que presenta el local, ver más detalle de los productos y seleccionar la cantidad que se quiere agregar al carrito.
+Este proyecto trata de un e-commerce de un local de tecnología, desde celulares hasta impresoras. Donde se puede:
+- Ver el listado completo de productos desde la pantalla principal.
+- Acceder a una categoria de productos en particular desde el menu.
+- Buscar algún producto en particular desde el buscador.
+- Ordenar los productos por precio ascendente o descendente.
+- Ver el detalle de un producto en particular cliqueando en el botón "Ver más" de un producto en particular.
+- En el detalle de un producto, uno puede seleccionar la cantidad y agregarlo al carrito.
+- Cliqueando en el botón del carrito o en el detalle de un item que ya se encuentra en el carrito cliqueando "terminar compra", se puede acceder al detalle del carrito de compra.
+- En el carrito de compras se pueden modificar las cantidades e incluso, eliminar elementos.
+- Cliqueando en "Finalizar Compra" en el carrito de compras, ya uno puede completar el formulario de checkout y efectuar finalmente la compra.
+
+Además de esto se incluye la lógica de inicio y cierre de sesión.
+Los usuarios para ingresar son:
+- email: 'coder@house.com', password: '123456'
+- email: 'coderhouse@gmail.com', password: 'coderhouse'
+- email: 'react@coder.com', password: 'react123'
 
 ## Acceder y probar el proyecto online
 Para acceder al proyecto y probarlo de manera online, acceder al siguiente enlace:
