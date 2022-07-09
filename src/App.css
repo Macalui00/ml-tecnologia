@@ -89,32 +89,36 @@
 }
 
 @media (min-width: 100px) and (max-width: 800px) {
-  .imagen-item.float-start {
+  .imagen-item.float-start,.listado-compra.float-start {
     float: none !important;
   }
-  .detalle-item.float-end {
+  
+  .detalle-item.float-end,.formulario-checkout.float-end {
     float: none !important;
   }
-
-  .item-detalle-contenedor {
+  
+  .item-detalle-contenedor,.finalizar-compra-contenedor {
+    display: block !important;    
     justify-content: center!important;
-    display: block !important;
+    align-items: center !important;
     text-align: center !important;
-}
+  }
 }
 
 @media (min-width: 801px) and (max-width: 1000px) {
 
-  .imagen-item.float-start {
+  .imagen-item.float-start,.listado-compra.float-start {
     float: none !important;
   }
-  .detalle-item.float-end {
+  
+  .detalle-item.float-end,.formulario-checkout.float-end {
     float: none !important;
   }
-
-  .item-detalle-contenedor {
-    justify-content: center!important;
+  
+  .item-detalle-contenedor,.finalizar-compra-contenedor  {
     display: block !important;
+    justify-content: center!important;
+    align-items: center !important;   
     text-align: center !important;
 }
 }

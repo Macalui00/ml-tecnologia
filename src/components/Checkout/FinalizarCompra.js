@@ -5,8 +5,8 @@ import FormularioCheckout from "./FormularioCheckout";
 const FinalizarCompra = ({generarOrden}) => {
 
     return(
-        <section className=''>
-            <Container className="container-sm container-fluid my-5">
+        <section className='d-flex align-items-center justify-content-center'>
+            <Container className="container-sm container-fluid my-5 finalizar-compra-contenedor">
                 <ListadoCompra/>
                 <FormularioCheckout generarOrden={generarOrden}/>
             </Container>

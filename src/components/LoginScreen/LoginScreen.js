@@ -9,10 +9,10 @@ import Separador from "../Separador/Separador";
 
 const schema = Yup.object().shape({
     email: Yup.string()
-                .required("Este campo es obligatorio.")
+                .required("El email es obligatorio.")
                 .email("Formato de email inválido."),
     password: Yup.string()
-                .required("Este campo es obligatorio.")
+                .required("La contraseña es obligatoria.")
                 .min(6, "La contraseña es demasiado corta.")
                 .max(20,"Máximo 20 caracteres.")
 })

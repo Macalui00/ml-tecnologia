@@ -7,10 +7,10 @@ const ListadoCompra = () => {
     const {totalPrice} = useCartContext();
 
     return(
-        <div className="p-0 me-4 float-start">
+        <div className="listado-compra float-start p-0 me-4">
             <TitleSection title={"Detalle Compra"} tamano={"2"}/>
             <DetalleCompra/>
-            <TitleEndSection title={"TOTAL: $"+ totalPrice()} tamano={4} clases={"mt-0 mb-4"}/>               
+            <TitleEndSection title={"TOTAL: $"+ totalPrice()} tamano={4} clases={"mt-0 mb-4"}/>            
         </div>
     )
 }
