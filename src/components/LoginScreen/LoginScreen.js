@@ -3,6 +3,7 @@ import { Row } from "react-bootstrap";
 import { useAuthContext } from "../Context/AuthContext";
 import TitleSection from "../TitleSection/TitleSection";
 import LoginFormik from "./LoginFormik";
+import Marca from "../Marca/Marca";
 import * as Yup from 'yup';
 
 const schema = Yup.object().shape({
@@ -26,6 +27,9 @@ const LoginScreen = () => {
     return(
         <section className=''>
             <Container className="container-sm container-fluid my-5">
+                <Row className="my-4">
+                    <Marca/>
+                </Row>
                 <Row className="align-items-center justify-content-center">
                     <TitleSection title={"Login"}/>
                     <LoginFormik loggearse={loggearse} schema={schema} error={error}/>
