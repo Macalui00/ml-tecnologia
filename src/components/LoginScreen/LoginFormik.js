@@ -23,6 +23,7 @@ const LoginFormik = ({loggearse, schema, error}) => {
                         type={"text"}
                         placeholder="Email de usuario"
                         className="form-control my-3"
+                        style={{'width':'400px'}}
                     />
                     {formik.errors.email && <MensajeAlerta mensaje={formik.errors.email} clases={"py-1 mt-0 mb-4 fw-bold fs-6"}/>}
 
@@ -33,6 +34,7 @@ const LoginFormik = ({loggearse, schema, error}) => {
                         type={"password"}
                         placeholder="Contraseña"
                         className="form-control my-3"
+                        style={{'width':'400px'}}
                     />
                     {formik.errors.password && <MensajeAlerta mensaje={formik.errors.password} clases={"py-1 mt-0 mb-4 fw-bold fs-6"}/>}
                     
@@ -46,15 +48,15 @@ const LoginFormik = ({loggearse, schema, error}) => {
                             <></>
                     }
                     
-                    <button type="submit" className="btn btn-warning my-2 fw-bold">Enviar</button>
+                    <button type="submit" className="btn btn-success my-2 fw-bold text-black">Enviar</button>
                     <br/>
-                    <button type="button" className="btn btn-warning mt-2 fw-bold" onClick={() => setIsRegistrando(!isRegistrando)}>
+                    <button type="button" className="btn btn-warning mt-3 fw-bold" onClick={() => setIsRegistrando(!isRegistrando)}>
                         {isRegistrando
                         ? "¿Ya tienes cuenta? ¡Inicia sesión"
-                        : "¿No tienes cuenta? ¡Regístrate gratis!"}
+                        : "¿No tienes cuenta? ¡Regístrate!"}
                     </button>
                     <br/>
-                    <Link to={"/changepassword"} className="btn btn-warning mt-2 fw-bold">¿Olvidate tu contraseña?</Link>
+                    <Link to={"/changepassword"} className="btn btn-warning mt-3 fw-bold">¿Olvidate tu contraseña?</Link>
                 </form>
             )}
         </Formik>

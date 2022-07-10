@@ -29,7 +29,7 @@ const Cart = () => {
                             <h4 className="text-warning fw-bold fs-4 bg-dark mt-0 mb-4 py-2">TOTAL: ${totalPrice()}</h4>
                             <Button onClick={emptyCart} className="btn btn-danger fw-bold">Vaciar Carrito</Button>
                             <br/>
-                            <Link to={"/checkout"} className="btn btn-success fw-bold mt-4">Finalizar Compra</Link>
+                            <Link to={"/checkout"} className="btn btn-success fw-bold mt-4 text-black">Finalizar Compra</Link>
                         </div>
                     :
                         <div></div>

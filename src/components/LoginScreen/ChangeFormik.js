@@ -34,7 +34,7 @@ const ChangeFormik = ({cambioPassword, schema, error}) => {
                             <></>
                     }
                     
-                    <button type="submit" className="btn btn-warning my-0 fw-bold">Enviar</button>
+                    <button type="submit" className="btn btn-success my-0 fw-bold text-black">Enviar</button>
                 </form>
             )}
         </Formik>

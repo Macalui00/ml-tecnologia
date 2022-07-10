@@ -44,7 +44,7 @@ const FormularioOrden = ({generarOrden, schema}) => {
                             style={{'width':'400px'}}
                         />
                         {formik.errors.direccion && <p className="alert alert-danger py-1 mt-1 mb-2" style={{fontSize:'16px'}}>{formik.errors.direccion}</p>}
-                        <button type="submit" className="btn btn-success mt-2 fw-bold">Enviar</button>
+                        <button type="submit" className="btn btn-success mt-2 fw-bold text-black">Enviar</button>
                     </form>
                 )}
             </Formik>

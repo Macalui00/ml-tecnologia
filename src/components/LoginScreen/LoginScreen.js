@@ -1,5 +1,4 @@
 import Container from "react-bootstrap/esm/Container";
-import { Row } from "react-bootstrap";
 import { useAuthContext } from "../Context/AuthContext-Firebase";
 import TitleSection from "../TitleSection/TitleSection";
 import LoginFormik from "./LoginFormik";
@@ -35,19 +34,14 @@ const LoginScreen = () => {
     return(
         <section className=''>
             <Container className="container-sm container-fluid my-5">
-                <Row className="my-4">
+                <div className="my-4">
                     <Marca/>
-                </Row>
-                <Row className="align-items-center justify-content-center">
+                </div>
+                <div className="align-items-center justify-content-center">
                     {isRegistrando ? <TitleSection title={"Singup"}/> : <TitleSection title={"Login"}/>}
                     <LoginFormik loggearse={loggearse} schema={schema} error={error}/>
-                    {/* <button className="btn btn-warning my-2 fw-bold" onClick={() => setIsRegistrando(!isRegistrando)}>
-                        {isRegistrando
-                        ? "¿Ya tienes cuenta? ¡Inicia sesión"
-                        : "¿No tienes cuenta? ¡Regístrate gratis!"}
-                    </button> */}
                     <hr className="mt-4 text-warning opacity-100" style={{height: '2px'}}/>                   
-                </Row>
+                </div>
             </Container>
         </section>
     )

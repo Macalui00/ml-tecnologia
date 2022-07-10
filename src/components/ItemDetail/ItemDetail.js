@@ -49,7 +49,7 @@ const ItemDetail = ({item}) => {
                                 {
                                     isInCart(item.id)
                                     ?   <>
-                                            <Link to="/cart" className="btn btn-success fw-bold my-4">Terminar Compra</Link>
+                                            <Link to="/cart" className="btn btn-success fw-bold my-4 text-black">Terminar Compra</Link>
                                             <br/>
                                         </>
                                     :

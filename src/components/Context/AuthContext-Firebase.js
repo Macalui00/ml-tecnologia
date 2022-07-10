@@ -13,10 +13,13 @@ export const AuthProvider = ({children}) => {
   const [usuario, setUsuario] = useState(null);
   const [isRegistrando, setIsRegistrando] = useState(false);
   const [emailEnviado, setEmailEnviado] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState({});
 
   const crearUsuario = (values) => {
-    const {email, password} = values
+    const {email, password} = values;
+
+    setError({});
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((usuarioFirebase) => {
         console.log("usuario creado:", usuarioFirebase);
@@ -54,7 +57,10 @@ export const AuthProvider = ({children}) => {
   };
 
   const iniciarSesion = (values) => {
-    const {email, password} = values
+    const {email, password} = values;
+    
+    setError({});
+    
     signInWithEmailAndPassword(auth, email, password)
       .then((usuarioFirebase) => {
         
@@ -88,8 +94,10 @@ export const AuthProvider = ({children}) => {
   };
 
   const cerrarSesion = () => {
+    setError({});
+    
     signOut(auth).then(() => {
-      console.log("cerrar")
+      console.log("Cierre de Sesión Exitosa.")
     }).catch((error) => {
       setError({
         errorCode: "Others",
@@ -99,7 +107,12 @@ export const AuthProvider = ({children}) => {
   };
 
   const cambiarPassword = (values) => {
-    const {email} = values
+    const {email} = values;
+    
+    setError({});
+    
+    auth.languageCode = 'es_ES';
+
     sendPasswordResetEmail(auth, email)
     .then(() => {
       setEmailEnviado(true);
@@ -126,10 +139,36 @@ export const AuthProvider = ({children}) => {
     });
   };
 
+  const obtenerUserId = () => {
+    const user = auth.currentUser;
+    if (user !== null) {
+      // The user object has basic properties such as display name, email, etc.
+      return user.uid;
+    }
+    return '';
+  } 
+
+  const obtenerDisplayName = () => {
+    const user = auth.currentUser;
+    if (user !== null) {
+      return user.displayName;
+    }
+    return '';
+  } 
+  
+  const obtenerEmail = () => {
+    const user = auth.currentUser;
+    if (user !== null) {
+      return user.email;
+    }
+    return '';
+  } 
+
   useEffect(() => {
     onAuthStateChanged(auth,(usuarioFirebase) => {
-      console.log("ya tienes sesión iniciada con:", usuarioFirebase);
       setUsuario(usuarioFirebase);
+      const user = auth.currentUser;
+      console.log(user)
     });
   }, []);
 
@@ -145,7 +184,10 @@ export const AuthProvider = ({children}) => {
             cerrarSesion, 
             cambiarPassword, 
             emailEnviado, 
-            setEmailEnviado
+            setEmailEnviado,
+            obtenerDisplayName,
+            obtenerEmail,
+            obtenerUserId
         }}>
             {children}
         </AuthContext.Provider>
