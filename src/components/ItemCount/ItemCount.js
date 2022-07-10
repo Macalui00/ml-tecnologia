@@ -4,8 +4,6 @@ import { BsPlus, BsDash } from "react-icons/bs";
 
 const ItemCount = ({tipo, stock = 4, setContador, contador, handleOps}) => {
 
-    // let [contador, setContador] = useState(inicial);
-
     const incrementar = () => {
         (stock > contador) && setContador(contador + 1);
     }
@@ -23,18 +21,18 @@ const ItemCount = ({tipo, stock = 4, setContador, contador, handleOps}) => {
                 <Button variant="primary" id="button-decrementar" className="pt-0" onClick={decrementar}>
                     <BsDash color='white'/>
                 </Button>
-                <h4 className='text-dark bg-white fw-bold ps-5 pe-5 mb-0 pt-1'>{contador}</h4>
+                <h4 className='d-flex align-items-center text-dark bg-white m-0 ps-5 pe-5'>{contador}</h4>
                 <Button variant="primary" id="button-incrementar" className="pt-0" onClick={incrementar}>
                     <BsPlus color='white'/>
                 </Button>
             </InputGroup>
             {
                tipo === 'cart'?  
-                <Button variant="primary" id="button-EditarCantidad" className="pt-1 fw-bold" onClick={handleOps}>
+                <Button variant="primary" id="button-EditarCantidad" className="pt-1" onClick={handleOps}>
                     Editar Cantidad
                 </Button>
                 :
-                <Button variant="primary" id="button-agregarCarrito" className="pt-1 fw-bold mt-1 mb-4" onClick={handleOps}>
+                <Button variant="primary" id="button-agregarCarrito" className="pt-1 mt-1 mb-4" onClick={handleOps}>
                     Agregar al Carrito
                 </Button>
             }

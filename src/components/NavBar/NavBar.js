@@ -1,6 +1,6 @@
 import './NavBar.css';
 import CardWidget from './../CardWidget/CardWidget.js';
-import { useAuthContext } from '../Context/AuthContext-Firebase';
+import { useAuthContext } from '../Context/AuthContext';
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 

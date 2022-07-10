@@ -1,10 +1,11 @@
 import { Formik } from "formik";
 import MensajeAlerta from "../MensajeAlerta/MensajeAlerta";
-import { useAuthContext } from "../Context/AuthContext-Firebase";
+import { useAuthContext } from "../Context/AuthContext";
 import { Link } from "react-router-dom";
+import Separador from "../Separador/Separador";
 
 const LoginFormik = ({loggearse, schema, error}) => {
-    const {isRegistrando, setIsRegistrando} = useAuthContext();
+    const {isRegistrando, setIsRegistrando,iniciarConGoogle} = useAuthContext();
     return(
         <Formik
                 initialValues={{
@@ -36,27 +37,31 @@ const LoginFormik = ({loggearse, schema, error}) => {
                         className="form-control my-3"
                         style={{'width':'400px'}}
                     />
-                    {formik.errors.password && <MensajeAlerta mensaje={formik.errors.password} clases={"py-1 mt-0 mb-4 fw-bold fs-6"}/>}
+                    {formik.errors.password && <MensajeAlerta mensaje={formik.errors.password} clases={"py-1 mt-0 mb-3 fw-bold fs-6"}/>}
                     
                     {
                         (!(formik.errors.password || formik.errors.email) && (error.errorMessage)) ? 
                             <MensajeAlerta 
                                 mensaje={(error.errorMessage) ? error.errorMessage : "Usuario o Contraseña Incorrectos"} 
-                                clases={"py-1 mt-3 mb-4 fw-bold fs-6"}
+                                clases={"py-1 my-3 fw-bold fs-6"}
                             /> 
                         : 
                             <></>
                     }
                     
-                    <button type="submit" className="btn btn-success my-2 fw-bold text-black">Enviar</button>
+                    <button type="submit" className="btn btn-success mt-0">Iniciar Sesión</button>
                     <br/>
-                    <button type="button" className="btn btn-warning mt-3 fw-bold" onClick={() => setIsRegistrando(!isRegistrando)}>
+                    <button onClick={iniciarConGoogle} className="btn btn-primary mt-3 mb-2">Iniciar con Google</button>
+                    <br/>
+                    <Separador />
+                    <button type="button" className="btn btn-warning mt-2 text-black" onClick={() => setIsRegistrando(!isRegistrando)}>
                         {isRegistrando
                         ? "¿Ya tienes cuenta? ¡Inicia sesión"
                         : "¿No tienes cuenta? ¡Regístrate!"}
                     </button>
+                    
                     <br/>
-                    <Link to={"/changepassword"} className="btn btn-warning mt-3 fw-bold">¿Olvidate tu contraseña?</Link>
+                    <Link to={"/changepassword"} className="btn btn-warning mt-3">¿Olvidate tu contraseña?</Link>
                 </form>
             )}
         </Formik>

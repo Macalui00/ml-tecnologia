@@ -1,6 +1,7 @@
 import TitleSection from "../TitleSection/TitleSection";
 import FormularioOrden from "./FormularioOrden";
 import * as Yup from 'yup';
+import Separador from "../Separador/Separador";
 
 const schema = Yup.object().shape({
     nombre: Yup.string()
@@ -26,6 +27,7 @@ const FinalizarCompra = ({generarOrden}) => {
         <div className="formulario-checkout float-end p-0">
             <TitleSection title={"Checkout"} tamano={"2"}/>
             <FormularioOrden generarOrden={generarOrden} schema={schema} />
+            <Separador/>
         </div>
     )
 }

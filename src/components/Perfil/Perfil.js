@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/esm/Container";
-import { useAuthContext } from "../Context/AuthContext-Firebase";
+import { useAuthContext } from "../Context/AuthContext";
 import TitleSection from "../TitleSection/TitleSection";
 
 const Perfil = () => {
@@ -10,7 +10,7 @@ const Perfil = () => {
             <Container className="container-sm container-fluid my-5">
                 <TitleSection title={"Mi Perfil"}/>
                 <p className="px-5">Email: {obtenerEmail()}</p>
-                <button className='btn btn-danger fw-bold' onClick={cerrarSesion}>Cerrar Sesión</button>
+                <button className='btn btn-danger' onClick={cerrarSesion}>Cerrar Sesión</button>
                 <hr className="mt-4 text-warning opacity-100" style={{height: '2px'}}/> 
             </Container>
         </section>

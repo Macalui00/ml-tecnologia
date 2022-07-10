@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/esm/Container";
-import { useAuthContext } from "../Context/AuthContext-Firebase";
+import { useAuthContext } from "../Context/AuthContext";
 import { Link } from "react-router-dom";
 import TitleSection from "../TitleSection/TitleSection";
 import ChangeFormik from "./ChangeFormik";
@@ -35,18 +35,18 @@ const ChangePassword = () => {
                             <p className="px-3">El email ha sido enviado exitosamente.</p>
                             <p className="px-3">No te olvides de también revisar la casilla de spam.</p>
                             <p className="px-3">Si aún así no recibes el mail vuelve a intentarlo cliqueando en el siguiente botón.</p>
-                            <button type="button" style={{width:'170px'}} className="btn btn-success mt-2 fw-bold text-black" onClick={() => setEmailEnviado(!emailEnviado)}>
+                            <button type="button" style={{width:'170px'}} className="btn btn-success mt-2" onClick={() => setEmailEnviado(!emailEnviado)}>
                                 Volver a Intentarlo
                             </button>
                             <br/>
-                            <Link to={"/login"} className="btn btn-warning mt-4 fw-bold">Volver a LogIn</Link>
+                            <Link to={"/login"} className="btn btn-warning mt-4">Volver a LogIn</Link>
                             <hr className="mt-4 text-warning opacity-100" style={{height: '2px'}}/>  
                         </>
                     :
                         <>
                             <TitleSection title={"Cambiar Contraseña"}/>
                             <ChangeFormik cambioPassword={cambioPassword} schema={schema} error={error}/>
-                            <Link to={"/login"} className="btn btn-warning mt-4 fw-bold">Volver a LogIn</Link>
+                            <Link to={"/login"} className="btn btn-warning mt-4 text-black">Volver a Iniciar Sesión</Link>
                             <hr className="mt-4 text-warning opacity-100" style={{height: '2px'}}/> 
                         </>
                     }                  

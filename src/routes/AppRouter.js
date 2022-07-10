@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import { useAuthContext } from '../components/Context/AuthContext-Firebase';
+import { useAuthContext } from '../components/Context/AuthContext';
 import PrivateRoutes from './PrivateRoutes';
 import PublicRoutes from './PublicRoutes';
 

@@ -34,7 +34,7 @@ const CartDetail = ({item}) => {
                 /> 
             }
             <p className="fw-bold fs-5 mt-4"><span>Precio: </span>${precio}</p>
-            <Button onClick={() => {removeItem(item.id);}} className="btn btn-danger fw-bold mb-2">
+            <Button onClick={() => {removeItem(item.id);}} className="btn btn-danger mb-2">
                 <BsFillTrashFill className='fs-4 m-0 pb-1'/> Eliminar
             </Button>
             <hr className="text-warning opacity-100 mb-0" style={{height: '2px'}}/>
