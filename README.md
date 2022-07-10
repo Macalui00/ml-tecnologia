@@ -33,7 +33,7 @@ Para el recupero de contraseña hay que ingresar el mail de usuario y luego en e
 
 ## Finalización de la Compra
 ![](public/FINALIZACION_COMPRA.gif)
-[](https://drive.google.com/file/d/1iB4kBy-t4LeyPwTpiwCTjFvZ2DFdJHLf/view?usp=sharing)
+[Finalización de Compra](https://drive.google.com/file/d/1iB4kBy-t4LeyPwTpiwCTjFvZ2DFdJHLf/view?usp=sharing)
 
 ## Acceso al Perfil y las Ordenes de Compra de un cliente
 ![](public/PERFIL-ORDENESDECOMPRA-LOGOUT.gif)
