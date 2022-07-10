@@ -102,10 +102,24 @@ export const AuthProvider = ({children}) => {
       setEmailEnviado(true);
     })
     .catch((error) => {
-      setError({
-        errorCode: error.code,
-        errorMessage: error.message
-      });
+
+      if(error.code === "auth/invalid-email"){
+        setError({
+            errorCode: error.code,
+            errorMessage: "El email ingresado es inválido."
+          });
+      } else if(error.code === "auth/user-not-found"){
+        setError({
+          errorCode: error.code,
+          errorMessage: "Usuario no encontrado."
+        })
+      } else {
+        setError({
+          errorCode: "Others",
+          errorMessage: "Ha habido un error, vuelva a intentarlo."
+        });
+      }   
+
     });
   };
 
@@ -117,7 +131,19 @@ export const AuthProvider = ({children}) => {
   }, []);
 
     return (
-        <AuthContext.Provider value={{usuario, error, crearUsuario, iniciarSesion, isRegistrando, setIsRegistrando, cerrarSesion, cambiarPassword, emailEnviado, setEmailEnviado}}>
+        <AuthContext.Provider 
+          value={{
+            usuario, 
+            error, 
+            crearUsuario, 
+            iniciarSesion, 
+            isRegistrando, 
+            setIsRegistrando, 
+            cerrarSesion, 
+            cambiarPassword, 
+            emailEnviado, 
+            setEmailEnviado
+        }}>
             {children}
         </AuthContext.Provider>
     )
