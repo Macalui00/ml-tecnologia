@@ -1,8 +1,8 @@
 import { useCartContext } from "../Context/CartContext";
 import { Navigate } from "react-router-dom";
 import { useCheckout } from "./useCheckout";
-import CompraExitosa from "./CompraExitosa";
-import FinalizarCompra from "./FinalizarCompra";
+import CompraExitosa from "../CompraExitosa/CompraExitosa";
+import FinalizarCompra from "../FinalizarCompra/FinalizarCompra";
 
 
 const Checkout = () => {

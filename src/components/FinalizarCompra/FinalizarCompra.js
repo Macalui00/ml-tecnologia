@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import ListadoCompra from "./ListadoCompra";
+import ListadoCompra from "../FinalizarCompra/ListadoCompra";
 import DetalleCheckout from "./DetalleCheckout";
 
 const FinalizarCompra = ({generarOrden}) => {
