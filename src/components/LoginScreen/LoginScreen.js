@@ -4,11 +4,6 @@ import TitleSection from "../TitleSection/TitleSection";
 import LoginFormik from "./LoginFormik";
 import Marca from "../Marca/Marca";
 import * as Yup from 'yup';
-<<<<<<< HEAD
-import Separador from "../Separador/Separador";
-=======
-import Marca from "../Marca/Marca";
->>>>>>> firebase-auth
 
 const schema = Yup.object().shape({
     email: Yup.string()
