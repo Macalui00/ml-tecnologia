@@ -20,6 +20,9 @@ Tanto para el registro, inicio y cierre de sesión como para el almacenamiento d
 
 Para la autenticación se utilizó tanto la autenticacion con email y contraseña como la autenticación con cuenta de gmail.
 
+# Visualización de Funcionamiento
+Para visualizar el funcionamiento, se adjuntan los siguientes enlaces a gift (por temas de peso no logre subirlos).
+
 ## Registro, Inicio y Cierre de Sesión
 Si bien en el siguiente gif no se explora el recupero de contraseña, si se encuentra funcionando el recupero de contraseña.
 Para el recupero de contraseña hay que ingresar el mail de usuario y luego en el recibirás un mail para el cambio de contraseña.
