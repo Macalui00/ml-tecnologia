@@ -1,11 +1,14 @@
 import Container from "react-bootstrap/esm/Container";
-import { Row } from "react-bootstrap";
-import { useAuthContext } from "../Context/AuthContext";
+import { useAuthContext } from "../Context/AuthContext-Firebase";
 import TitleSection from "../TitleSection/TitleSection";
 import LoginFormik from "./LoginFormik";
 import Marca from "../Marca/Marca";
 import * as Yup from 'yup';
+<<<<<<< HEAD
 import Separador from "../Separador/Separador";
+=======
+import Marca from "../Marca/Marca";
+>>>>>>> firebase-auth
 
 const schema = Yup.object().shape({
     email: Yup.string()
@@ -19,23 +22,31 @@ const schema = Yup.object().shape({
 
 const LoginScreen = () => {
 
-    const {login, error} = useAuthContext()
+    const {crearUsuario, error, iniciarSesion, isRegistrando} = useAuthContext();
 
     const loggearse = (e) => {
-        login(e)
-    }
+        console.log(isRegistrando)
+        if (isRegistrando) {
+          crearUsuario(e);
+        }
+    
+        if (!isRegistrando) {
+            console.log("iniciar sesion")
+          iniciarSesion(e);
+        }
+      };
 
     return(
         <section className='d-flex align-items-center justify-content-center'>
             <Container className="container-sm container-fluid my-5">
-                <Row className="my-4">
+                <div className="my-4">
                     <Marca/>
-                </Row>
-                <Row className="align-items-center justify-content-center">
-                    <TitleSection title={"Login"}/>
+                </div>
+                <div className="align-items-center justify-content-center">
+                    {isRegistrando ? <TitleSection title={"Singup"}/> : <TitleSection title={"Login"}/>}
                     <LoginFormik loggearse={loggearse} schema={schema} error={error}/>
-                    <Separador clases="mt-4"/>            
-                </Row>
+                    <hr className="mt-4 text-warning opacity-100" style={{height: '2px'}}/>                   
+                </div>
             </Container>
         </section>
     )

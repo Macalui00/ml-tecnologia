@@ -16,16 +16,6 @@ const Buscar = ({buscarNombre, setBuscarNombre}) => {
                     }}
                     style={{width:'500px', fontSize:'20px'}}
                     />
-                    {/* <Button 
-                        variant="btn btn-success"
-                        className="fw-bold fs-5" 
-                        onClick={(event) => {
-                            setBuscarNombre(event.target.value);
-                        }
-                        }
-                    >
-                            Buscar
-                    </Button> */}
             </Form>         
         </Container>
     )
