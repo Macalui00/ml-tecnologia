@@ -24,7 +24,6 @@ Para la autenticación se utilizó tanto la autenticacion con email y contraseñ
 Si bien en el siguiente gif no se explora el recupero de contraseña, si se encuentra funcionando el recupero de contraseña.
 Para el recupero de contraseña hay que ingresar el mail de usuario y luego en el recibirás un mail para el cambio de contraseña.
 ![](public/LOGIN-SIGNUP-LOGOUT.gif)
-![Uploading LOGIN-SIGNUP-LOGOUT.gif…]()
 
 ## Busqueda, Filtrado, Ordenamiento y Selección de un producto
 ![](public/BUSQUEDA-FILTRADO-ORDENAMIENTO-DETALLEITEM.gif)
@@ -34,6 +33,7 @@ Para el recupero de contraseña hay que ingresar el mail de usuario y luego en e
 
 ## Finalización de la Compra
 ![](public/FINALIZACION_COMPRA.gif)
+[](https://drive.google.com/file/d/1iB4kBy-t4LeyPwTpiwCTjFvZ2DFdJHLf/view?usp=sharing)
 
 ## Acceso al Perfil y las Ordenes de Compra de un cliente
 ![](public/PERFIL-ORDENESDECOMPRA-LOGOUT.gif)
