@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react"
-import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
 import {auth} from '../firebase/config'
 
 export const AuthContext = createContext()
@@ -12,6 +12,7 @@ export const AuthProvider = ({children}) => {
 
   const [usuario, setUsuario] = useState(null);
   const [isRegistrando, setIsRegistrando] = useState(false);
+  const [emailEnviado, setEmailEnviado] = useState(false);
   const [error, setError] = useState("");
 
   const crearUsuario = (values) => {
@@ -86,13 +87,6 @@ export const AuthProvider = ({children}) => {
       });
   };
 
-  useEffect(() => {
-    onAuthStateChanged(auth,(usuarioFirebase) => {
-      console.log("ya tienes sesión iniciada con:", usuarioFirebase);
-      setUsuario(usuarioFirebase);
-    });
-  }, []);
-
   const cerrarSesion = () => {
     signOut(auth).then(() => {
       console.log("cerrar")
@@ -101,9 +95,29 @@ export const AuthProvider = ({children}) => {
     });
   };
 
+  const cambiarPassword = (values) => {
+    const {email} = values
+    sendPasswordResetEmail(auth, email)
+    .then(() => {
+      setEmailEnviado(true);
+    })
+    .catch((error) => {
+      setError({
+        errorCode: error.code,
+        errorMessage: error.message
+      });
+    });
+  };
+
+  useEffect(() => {
+    onAuthStateChanged(auth,(usuarioFirebase) => {
+      console.log("ya tienes sesión iniciada con:", usuarioFirebase);
+      setUsuario(usuarioFirebase);
+    });
+  }, []);
 
     return (
-        <AuthContext.Provider value={{usuario, error, crearUsuario, iniciarSesion, isRegistrando, setIsRegistrando, cerrarSesion}}>
+        <AuthContext.Provider value={{usuario, error, crearUsuario, iniciarSesion, isRegistrando, setIsRegistrando, cerrarSesion, cambiarPassword, emailEnviado, setEmailEnviado}}>
             {children}
         </AuthContext.Provider>
     )

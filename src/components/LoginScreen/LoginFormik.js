@@ -1,6 +1,7 @@
 import { Formik } from "formik";
 import MensajeAlerta from "../MensajeAlerta/MensajeAlerta";
 import { useAuthContext } from "../Context/AuthContext-Firebase";
+import { Link } from "react-router-dom";
 
 const LoginFormik = ({loggearse, schema, error}) => {
     const {isRegistrando, setIsRegistrando} = useAuthContext();
@@ -52,6 +53,8 @@ const LoginFormik = ({loggearse, schema, error}) => {
                         ? "¿Ya tienes cuenta? ¡Inicia sesión"
                         : "¿No tienes cuenta? ¡Regístrate gratis!"}
                     </button>
+                    <br/>
+                    <Link to={"/changepassword"} className="btn btn-warning mt-2 fw-bold">¿Olvidate tu contraseña?</Link>
                 </form>
             )}
         </Formik>
