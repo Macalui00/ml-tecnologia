@@ -49,7 +49,11 @@ const LoginFormik = ({loggearse, schema, error}) => {
                             <></>
                     }
                     
-                    <button type="submit" className="btn btn-success mt-0">Iniciar Sesión</button>
+                    <button type="submit" className="btn btn-success mt-0"> 
+                        {!isRegistrando
+                        ? "Iniciar Sesión"
+                        : "Registrarse"}
+                    </button>
                     <br/>
                     <button onClick={iniciarConGoogle} className="btn btn-primary mt-3 mb-2">Iniciar con Google</button>
                     <br/>
