@@ -21,7 +21,7 @@ const schema = Yup.object().shape({
                 .matches(/^([a-zA-ZÀ-ÿ,.'-]+\s)+[0-9]+(\s[0-9]+[a-zA-Z]+)*$/,"Dirección inválida.")
 })
 
-const FinalizarCompra = ({generarOrden}) => {
+const DetalleCheckout = ({generarOrden}) => {
 
     return(
         <div className="formulario-checkout float-end p-0">
@@ -31,4 +31,4 @@ const FinalizarCompra = ({generarOrden}) => {
         </div>
     )
 }
-export default FinalizarCompra;
+export default DetalleCheckout;

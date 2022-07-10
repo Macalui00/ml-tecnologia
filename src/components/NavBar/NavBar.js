@@ -5,7 +5,7 @@ import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
-    const {cerrarSesion, obtenerEmail} = useAuthContext();
+    const {cerrarSesion, obtenerEmail, obtenerUserId} = useAuthContext();
 
     return <header>
                 <Navbar bg="dark" variant="dark" expand="lg" id="navbar">
@@ -39,7 +39,7 @@ const NavBar = () => {
                             <Nav className="me-5 justify-content-end">
                                 <CardWidget/>
                                 <NavDropdown title={obtenerEmail()} id="basic-nav-dropdown" className='fw-bold ms-2 fs-5 pt-1'>
-                                    <Link className='fw-bold dropdown-item' to={"/perfil"}>Mi Perfil</Link>
+                                    <Link className='fw-bold dropdown-item' to={"/perfil/"+obtenerUserId()}>Mi Perfil</Link>
                                     <NavDropdown.Item className='fw-bold' href="#action/3.2">Configuración</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item className='fw-bold text-danger logout' onClick={cerrarSesion}>Cerrar Sesión</NavDropdown.Item>

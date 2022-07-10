@@ -8,7 +8,7 @@ const ListadoCompra = () => {
 
     return(
         <div className="listado-compra float-start p-0 me-4">
-            <TitleSection title={"Detalle Compra"} tamano={"2"}/>
+            <TitleSection title={"Listado de Compra"} tamano={"2"}/>
             <DetalleCompra/>
             <TitleEndSection title={"TOTAL: $"+ totalPrice()} tamano={4} clases={"mt-0 mb-4"}/>            
         </div>

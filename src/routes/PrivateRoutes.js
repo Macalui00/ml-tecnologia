@@ -8,6 +8,7 @@ import Perfil from '../components/Perfil/Perfil';
 import { Navigate } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import Banner from '../components/Banner/Banner';
+import OrdenDetailContainer from '../components/OrdenDetailContainer/OrdenDetailContainer';
 
 const PrivateRoutes = () => {
 
@@ -20,10 +21,10 @@ const PrivateRoutes = () => {
                     <Route path='/' element={<ItemListContainer/>}/>
                     <Route path='/categorias/:categoryId' element={<ItemListContainer/>}/>
                     <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
-                    <Route path='/ItemDetailContainer' element={<ItemDetailContainer/>}/>
                     <Route path='/cart' element={<Cart/>}/>
                     <Route path='/checkout' element={<Checkout/>}/>
-                    <Route path='/Perfil' element={<Perfil/>}/>
+                    <Route path='/perfil/:userId' element={<Perfil/>}/>
+                    <Route path='/ordenDetail/:ordenId' element={<OrdenDetailContainer/>}/>
                     <Route path='*' element={<Navigate to={"/"}/>}/>
                 </Routes>
             </main>

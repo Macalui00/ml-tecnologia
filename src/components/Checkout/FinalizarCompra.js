@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import ListadoCompra from "./ListadoCompra";
-import FormularioCheckout from "./FormularioCheckout";
+import DetalleCheckout from "./DetalleCheckout";
 
 const FinalizarCompra = ({generarOrden}) => {
 
@@ -8,7 +8,7 @@ const FinalizarCompra = ({generarOrden}) => {
         <section className='d-flex align-items-center justify-content-center'>
             <Container className="container-sm container-fluid my-5 finalizar-compra-contenedor">
                 <ListadoCompra/>
-                <FormularioCheckout generarOrden={generarOrden}/>
+                <DetalleCheckout generarOrden={generarOrden}/>
             </Container>
         </section>
     )
