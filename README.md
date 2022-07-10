@@ -32,6 +32,7 @@ Para visualizar el funcionamiento, se dejan a continuación una serie de gifs qu
 ### Registro, Inicio y Cierre de Sesión
 Si bien en el siguiente gif no se explora el recupero de contraseña, si se encuentra funcionando el recupero de contraseña.
 Para el recupero de contraseña hay que ingresar el mail de usuario y luego en el recibirás un mail para el cambio de contraseña.
+
 ![](public/LOGIN-SIGNUP-LOGOUT.gif)
 
 ### Busqueda, Filtrado, Ordenamiento y Selección de un producto
