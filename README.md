@@ -20,29 +20,28 @@ Tanto para el registro, inicio y cierre de sesión como para el almacenamiento d
 
 Para la autenticación se utilizó tanto la autenticacion con email y contraseña como la autenticación con cuenta de gmail.
 
-# Visualización de Funcionamiento
-Para visualizar el funcionamiento, se adjuntan los siguientes enlaces a gift (por temas de peso no logre subirlos).
-
-## Registro, Inicio y Cierre de Sesión
-Si bien en el siguiente gif no se explora el recupero de contraseña, si se encuentra funcionando el recupero de contraseña.
-Para el recupero de contraseña hay que ingresar el mail de usuario y luego en el recibirás un mail para el cambio de contraseña.
-![](public/LOGIN-SIGNUP-LOGOUT.gif)
-
-## Busqueda, Filtrado, Ordenamiento y Selección de un producto
-![](public/BUSQUEDA-FILTRADO-ORDENAMIENTO-DETALLEITEM.gif)
-
-## Selección de Producto y Funcionamiento del Carrito de Compras
-![](public/DETALLEITEM-MANEJO_CARRITO-FINALIZAR_COMPRA.gif)
-
-## Finalización de la Compra
-![](public/FINALIZACION_COMPRA.gif)
-[Finalización de Compra](https://drive.google.com/file/d/1iB4kBy-t4LeyPwTpiwCTjFvZ2DFdJHLf/view?usp=sharing)
-
-## Acceso al Perfil y las Ordenes de Compra de un cliente
-![](public/PERFIL-ORDENESDECOMPRA-LOGOUT.gif)
-
 ## Librerías utilizadas
 
 Las librerías utilizadas para este proyecto son: 
 - Bootstrap
 - Formik
+
+## Visualización de Funcionamiento
+Para visualizar el funcionamiento, se dejan a continuación una serie de gifs que muestran de manera resumida el funcionamiento del E-commerce.
+
+### Registro, Inicio y Cierre de Sesión
+Si bien en el siguiente gif no se explora el recupero de contraseña, si se encuentra funcionando el recupero de contraseña.
+Para el recupero de contraseña hay que ingresar el mail de usuario y luego en el recibirás un mail para el cambio de contraseña.
+![](public/LOGIN-SIGNUP-LOGOUT.gif)
+
+### Busqueda, Filtrado, Ordenamiento y Selección de un producto
+![](public/BUSQUEDA-FILTRADO-ORDENAMIENTO-DETALLEITEM.gif)
+
+### Selección de Producto y Funcionamiento del Carrito de Compras
+![](public/DETALLEITEM-MANEJO_CARRITO-FINALIZAR_COMPRA.gif)
+
+### Finalización de la Compra
+![](public/FINALIZACION_COMPRA.gif)
+
+### Acceso al Perfil y las Ordenes de Compra de un cliente
+![](public/PERFIL-ORDENESDECOMPRA-LOGOUT.gif)
