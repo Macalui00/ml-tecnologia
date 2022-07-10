@@ -1,12 +1,15 @@
 import { Formik } from "formik";
+import { useAuthContext } from "../Context/AuthContext";
 
 const FormularioOrden = ({generarOrden, schema}) => {
+    const {cerrarSesion, obtenerEmail} = useAuthContext();
     
     return(
             <Formik
                 initialValues={{
                     nombre: '',
                     telefono: '',
+                    email: obtenerEmail(),
                     direccion: ''
                 }}         
                 onSubmit={generarOrden}  
@@ -34,6 +37,17 @@ const FormularioOrden = ({generarOrden, schema}) => {
                             style={{'width':'400px'}}
                         />
                         {formik.errors.telefono && <p className="alert alert-danger py-1 mt-1 mb-2" style={{fontSize:'16px'}}>{formik.errors.telefono}</p>}
+                        <input
+                                value={formik.values.email}
+                                name="email"
+                                onChange={formik.handleChange}
+                                type={"text"}
+                                placeholder={obtenerEmail()}
+                                readonly="readonly"
+                                className="form-control my-2"
+                                style={{'width':'400px'}}
+                            />
+                        {formik.errors.email && <p className="alert alert-danger py-1 mt-1 mb-2" style={{fontSize:'16px'}}>{formik.errors.email}</p>}
                         <input
                             value={formik.values.direccion}
                             name="direccion"

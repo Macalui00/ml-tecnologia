@@ -14,6 +14,9 @@ const schema = Yup.object().shape({
                 .min(8, "El número de contacto es demasiado corto.")
                 .max(15,"Máximo 15 caracteres.")
                 .matches(/^[0-9]+$/,"Nombre inválido."),
+    email: Yup.string()
+                .required("Este campo es obligatorio.")
+                .email("Formato de email inválido."),
     direccion: Yup.string()
                 .required("La dirección es obligatoria.")
                 .min(4, "La dirección es demasiado corta.")
