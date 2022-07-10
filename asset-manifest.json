@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ml-tecnologia/static/css/main.da2455fd.css",
-    "main.js": "/ml-tecnologia/static/js/main.4a3c7b31.js",
+    "main.js": "/ml-tecnologia/static/js/main.528a4600.js",
     "static/js/787.2bfe55b4.chunk.js": "/ml-tecnologia/static/js/787.2bfe55b4.chunk.js",
     "index.html": "/ml-tecnologia/index.html",
     "main.da2455fd.css.map": "/ml-tecnologia/static/css/main.da2455fd.css.map",
-    "main.4a3c7b31.js.map": "/ml-tecnologia/static/js/main.4a3c7b31.js.map",
+    "main.528a4600.js.map": "/ml-tecnologia/static/js/main.528a4600.js.map",
     "787.2bfe55b4.chunk.js.map": "/ml-tecnologia/static/js/787.2bfe55b4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.da2455fd.css",
-    "static/js/main.4a3c7b31.js"
+    "static/js/main.528a4600.js"
   ]
 }
