@@ -91,7 +91,10 @@ export const AuthProvider = ({children}) => {
     signOut(auth).then(() => {
       console.log("cerrar")
     }).catch((error) => {
-      console.log(error)
+      setError({
+        errorCode: "Others",
+        errorMessage: "Ha habido un error en el cierre de sesión."
+      });
     });
   };
 
